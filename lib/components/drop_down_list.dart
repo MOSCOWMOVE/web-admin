@@ -67,22 +67,19 @@ class _DropDownListState extends State<DropDownList>
           vsync: this,
           child: SizedBox(
             height: DropDownListOpened ? 250 : 0,
-            child: CustomScrollBar(
-              builder: (controller) => ListView(
-                controller: controller,
-                shrinkWrap: true,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 5, vertical: 7),
-                    child: SearchRow(
-                        controller: _searchRowController,
-                        onChanged: (text) {},
-                        hintText: 'Найти...'),
-                  ),
-                  _buildGroupSportItem(pickEverySport),
-                  ...listOfSport.map((item) => _buildSportItem(item)).toList(),
-                ],
-              ),
+            child: ListView(
+              shrinkWrap: true,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5, vertical: 7),
+                  child: SearchRow(
+                      controller: _searchRowController,
+                      onChanged: (text) {},
+                      hintText: 'Найти...'),
+                ),
+                _buildGroupSportItem(pickEverySport),
+                ...listOfSport.map((item) => _buildSportItem(item)).toList(),
+              ],
             ),
           ),
         ),
