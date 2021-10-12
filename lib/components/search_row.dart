@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-const double searchRowHeight = 40.0;
+const double searchRowHeight = 35.0;
 
 class SearchRow extends StatefulWidget {
   const SearchRow(
@@ -26,18 +26,20 @@ class _SearchRowState extends State<SearchRow> {
       width: MediaQuery.of(context).size.width * 0.5,
       height: searchRowHeight,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25.0),
-        color: Colors.grey.withOpacity(0.5),
-      ),
+          borderRadius: BorderRadius.circular(4.0),
+          border: Border.all(
+            color: Color(0xff5A5CD8),
+          )),
       child: TextField(
         controller: widget.controller,
         decoration: InputDecoration(
-          prefixIcon: Icon(
-            Icons.search,
-            color: Colors.grey,
-          ),
           border: InputBorder.none,
           hintText: widget.hintText,
+          hintStyle: TextStyle(
+            fontSize: 12,
+            color: Color(0xff5A5CD8),
+            fontWeight: FontWeight.w400,
+          ),
         ),
         onChanged: widget.onChanged,
       ),

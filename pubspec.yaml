@@ -24,9 +24,13 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.2
+  #map
   flutter_map: ^0.14.0
+
+  #design
+  cupertino_icons: ^1.0.2
   font_awesome_flutter: ^9.1.0
+  draggable_scrollbar: ^0.1.0
 
 dev_dependencies:
   flutter_test:

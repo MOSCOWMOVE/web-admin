@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:moscow_move_mobile/components/custom_scroll_bar.dart';
+import 'package:moscow_move_mobile/components/search_row.dart';
+import 'package:moscow_move_mobile/models/sport_checkbox_state.dart';
 
-List<String> kindsOfSport = [
-  'Выделить всё',
-  'Футбол',
-  'Волейбол',
-  'Баскетбол',
-  'Плавание'
+final pickEverySport = SportCheckBoxState(title: 'Выбрать всё');
+
+final listOfSport = [
+  SportCheckBoxState(title: 'Футбол'),
+  SportCheckBoxState(title: 'Волейбол'),
+  SportCheckBoxState(title: 'Баскетбол'),
+  SportCheckBoxState(title: 'Плавание'),
 ];
 
 class DropDownList extends StatefulWidget {
@@ -18,10 +22,11 @@ class DropDownList extends StatefulWidget {
   _DropDownListState createState() => _DropDownListState();
 }
 
-class _DropDownListState extends State<DropDownList> with SingleTickerProviderStateMixin {
-
+class _DropDownListState extends State<DropDownList>
+    with SingleTickerProviderStateMixin {
   double chevronRotationAngle = -pi * 0.5;
   late bool DropDownListOpened;
+  TextEditingController _searchRowController = TextEditingController();
 
   @override
   void initState() {
@@ -62,11 +67,21 @@ class _DropDownListState extends State<DropDownList> with SingleTickerProviderSt
           vsync: this,
           child: SizedBox(
             height: DropDownListOpened ? 250 : 0,
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: kindsOfSport.length,
-              itemBuilder: (context, index) => ListTile(
-                title: Text('${kindsOfSport[index]}'),
+            child: CustomScrollBar(
+              builder: (controller) => ListView(
+                controller: controller,
+                shrinkWrap: true,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 5, vertical: 7),
+                    child: SearchRow(
+                        controller: _searchRowController,
+                        onChanged: (text) {},
+                        hintText: 'Найти...'),
+                  ),
+                  _buildGroupSportItem(pickEverySport),
+                  ...listOfSport.map((item) => _buildSportItem(item)).toList(),
+                ],
               ),
             ),
           ),
@@ -74,4 +89,42 @@ class _DropDownListState extends State<DropDownList> with SingleTickerProviderSt
       ],
     );
   }
+
+  Widget _buildSportItem(SportCheckBoxState item) {
+    return CheckboxListTile(
+        controlAffinity: ListTileControlAffinity.leading,
+        value: item.value,
+        title: Text(item.title),
+        onChanged: (value) => setState(() {
+              item.value = value!;
+              pickEverySport.value =
+                  listOfSport.every((element) => element.value);
+            }));
+  }
+
+  Widget _buildGroupSportItem(SportCheckBoxState item) {
+    return CheckboxListTile(
+        controlAffinity: ListTileControlAffinity.leading,
+        value: item.value,
+        title: Text(item.title),
+        onChanged: (value) => setState(() {
+              item.value = value!;
+              listOfSport.forEach((element) {
+                element.value = value;
+              });
+            }));
+  }
+
+  // List<Widget> _buildListOfSport() {
+  //   var list = listOfSport
+  //       .map((item) => CheckboxListTile(
+  //           controlAffinity: ListTileControlAffinity.leading,
+  //           value: item.value,
+  //           title: Text(item.title),
+  //           onChanged: (value) => setState(() {
+  //                 item.value = value!;
+  //               })))
+  //       .toList();
+  //   return list;
+  // }
 }

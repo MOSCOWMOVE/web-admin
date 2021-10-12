@@ -13,6 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   late AnimationController chevronAnimationController;
   TextEditingController _searchRowController = TextEditingController();
   bool DropDownListOpened = false;
@@ -30,6 +31,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      endDrawerEnableOpenDragGesture: false,
       drawer: CategoriesDrawer(
         items: [
           SizedBox(height: 30),
