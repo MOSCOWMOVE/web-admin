@@ -6,13 +6,13 @@ import img from "./location_pin.png";
         
 const map = new mapboxgl.Map({
 container: 'map', // container ID
-style: 'mapbox://styles/mapbox/light-v10', // style URL
+style: localStorage.blackTheme == "true"? 'mapbox://styles/mapbox/dark-v10' :'mapbox://styles/mapbox/light-v10', // style URL
 center: [37.61, 55.7 ], // starting position [lng, lat]
 zoom: 9 // starting zoom
 });
 
-
-
+console.log("ща буит локал сторадж")
+console.log(localStorage.getItem("blackTheme"))
 
 
 export const getCircleCords = (radius:number, steps:number, center:number[]) =>{
