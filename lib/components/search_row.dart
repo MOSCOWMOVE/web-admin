@@ -5,13 +5,13 @@ const double searchRowHeight = 40.0;
 
 class SearchRow extends StatefulWidget {
   const SearchRow(
-      {required this.controller,
-      required this.onChanged,
+      {this.controller,
+      this.onChanged,
       this.hintText,
-      Key? key})
+      Key key})
       : super(key: key);
 
-  final String? hintText;
+  final String hintText;
   final Function(String) onChanged;
   final TextEditingController controller;
 

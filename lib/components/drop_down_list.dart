@@ -10,7 +10,7 @@ List<String> kindsOfSport = [
 ];
 
 class DropDownList extends StatefulWidget {
-  const DropDownList({this.opened = false, Key? key}) : super(key: key);
+  const DropDownList({this.opened = false, Key key}) : super(key: key);
 
   final bool opened;
 
@@ -21,7 +21,7 @@ class DropDownList extends StatefulWidget {
 class _DropDownListState extends State<DropDownList> with SingleTickerProviderStateMixin {
 
   double chevronRotationAngle = -pi * 0.5;
-  late bool DropDownListOpened;
+  bool DropDownListOpened;
 
   @override
   void initState() {

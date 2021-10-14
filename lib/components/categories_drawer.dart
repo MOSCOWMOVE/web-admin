@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CategoriesDrawer extends StatefulWidget {
-  const CategoriesDrawer({required this.items, Key? key}) : super(key: key);
+  const CategoriesDrawer({this.items, Key key}) : super(key: key);
 
   final List<Widget> items;
 

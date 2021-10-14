@@ -8,7 +8,7 @@ import 'dart:ui' as ui;
 
 
 class MapWidget extends StatelessWidget {
-  const MapWidget({  Key ?key }) : super(key: key);  
+  const MapWidget({  Key key }) : super(key: key);  
   
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class MapWidget extends StatelessWidget {
             (int id) => html.IFrameElement()
           ..width = MediaQuery.of(context).size.width.toString()
           ..height = MediaQuery.of(context).size.height.toString()
-          ..src = 'lib/components/assets/index.html'
+          ..src = 'lib/components/assets/dist/index.html'
           ..style.border = 'none');
     return
       Scaffold(

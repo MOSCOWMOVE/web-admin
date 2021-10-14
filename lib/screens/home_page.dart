@@ -6,14 +6,14 @@ import 'package:moscow_move_mobile/components/drop_down_list.dart';
 import 'package:moscow_move_mobile/components/search_row.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({Key key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  late AnimationController chevronAnimationController;
+  AnimationController chevronAnimationController;
   TextEditingController _searchRowController = TextEditingController();
   bool DropDownListOpened = false;
 
