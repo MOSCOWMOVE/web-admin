@@ -52,8 +52,12 @@ class MapWidget extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    storage.setItem('dots', jsonEncode(dots));
+    html.window.localStorage['dots'] = jsonEncode(dots);
+    html.window.localStorage['blackTheme'] = 'false';
+    html.window.addEventListener('storage', (e) => {
+            print( html.window.localStorage['activePoint'])
 
+    } );
     // ignore: undefined_prefixed_name
     ui.platformViewRegistry.registerViewFactory(
         'map',

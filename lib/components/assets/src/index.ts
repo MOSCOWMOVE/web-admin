@@ -11,8 +11,6 @@ center: [37.61, 55.7 ], // starting position [lng, lat]
 zoom: 9 // starting zoom
 });
 
-console.log("ща буит локал сторадж")
-console.log(localStorage.getItem("blackTheme"))
 
 
 export const getCircleCords = (radius:number, steps:number, center:number[]) =>{
@@ -45,6 +43,7 @@ JSON.parse(localStorage.dots).markers.forEach((dot:any) => {
         {
                         // feature for Mapbox DC
                         'type': 'Feature',
+                        "id":dot.id,
                         'geometry': {
                             'type': 'Point',
                             'coordinates': dot.cords
@@ -158,72 +157,79 @@ const geo5000mjson = {
 };
 
 map.on('load', () => {
-    map.addSource('points500m', {
-        'type': 'geojson',
-        'data': (geo500mjson as any)
-    });
-    map.addSource('points1000m', {
-        'type': 'geojson',
-        'data': (geo1000mjson as any)
-    });
-    map.addSource('points3000m', {
-        'type': 'geojson',
-        'data': (geo3000mjson as any)
-    });
-    map.addSource('points5000m', {
-        'type': 'geojson',
-        'data': (geo5000mjson as any)
-    });
-
-
-    map.addLayer(
-            {
-                'id': 'r500',
-                'type': 'fill',
-                'source': 'points500m',
-                'layout': {},
-                'paint': {
-                    'fill-color': '#FF002E',
-                    'fill-opacity': 0.25
+    if (localStorage.getItem("blackTheme") != "true"){
+        map.addSource('points500m', {
+            'type': 'geojson',
+            'data': (geo500mjson as any)
+        });
+        map.addSource('points1000m', {
+            'type': 'geojson',
+            'data': (geo1000mjson as any)
+        });
+        map.addSource('points3000m', {
+            'type': 'geojson',
+            'data': (geo3000mjson as any)
+        });
+        map.addSource('points5000m', {
+            'type': 'geojson',
+            'data': (geo5000mjson as any)
+        });
+    
+    
+        map.addLayer(
+                {
+                    'id': 'r500',
+                    'type': 'fill',
+                    'source': 'points500m',
+                    'layout': {},
+                    "minzoom" : 8,
+                    'paint': {
+                        'fill-color': '#FF002E',
+                        'fill-opacity': 0.25
+                    }
                 }
-            }
+            )
+        map.addLayer(
+                {
+                    'id': 'r1000',
+                    'type': 'fill',
+                    'source': 'points1000m',
+                    'layout': {},
+                    "minzoom" : 8,
+                    'paint': {
+                        'fill-color': '#FD5C01',
+                        'fill-opacity': 0.25
+                    }
+                }
+            )
+        map.addLayer(
+                {
+                    'id': 'r3000',
+                    'type': 'fill',
+                    'source': 'points3000m',
+                    'layout': {},
+                    "minzoom" : 8,
+                    'paint': {
+                        'fill-color': '#F9C200',
+                        'fill-opacity': 0.25
+                    }
+                }
+            )
+        map.addLayer(
+                {
+                    'id': 'r5000',
+                    'type': 'fill',
+                    'source': 'points5000m',
+                    'layout': {},
+                    "minzoom" : 8,
+                    'paint': {
+                        'fill-color': '#46FF90',
+                        'fill-opacity': 0.25
+                    }
+                }
         )
-    map.addLayer(
-            {
-                'id': 'r1000',
-                'type': 'fill',
-                'source': 'points1000m',
-                'layout': {},
-                'paint': {
-                    'fill-color': '#FD5C01',
-                    'fill-opacity': 0.25
-                }
-            }
-        )
-    map.addLayer(
-            {
-                'id': 'r3000',
-                'type': 'fill',
-                'source': 'points3000m',
-                'layout': {},
-                'paint': {
-                    'fill-color': '#F9C200',
-                    'fill-opacity': 0.25
-                }
-            }
-        )
-    map.addLayer(
-            {
-                'id': 'r5000',
-                'type': 'fill',
-                'source': 'points5000m',
-                'layout': {},
-                'paint': {
-                    'fill-color': '#46FF90',
-                    'fill-opacity': 0.25
-                }
-            }
-    )
+    }
+   
 
 
     map.addLayer({
@@ -237,8 +243,9 @@ map.on('load', () => {
                         'features': outlines
                     }
             },
+            "minzoom" : 8,
             "paint": {
-                "line-color": "#888",
+                "line-color": localStorage.getItem("blackTheme") == "true"? "#2B2DBA": "#888",
                 "line-width": 3,
                 "line-dasharray": [4, 4]
             }
@@ -280,7 +287,16 @@ map.loadImage(
 );
 });
 
-
+map.on('click', 'points', (e) => { 
+    if (e.features[0].geometry.type == "Point"){
+        localStorage.activePoint = JSON.stringify({active:true, id: e.features[0].id})
+        map.flyTo({
+            center: [e.features[0].geometry.coordinates[0], e.features[0].geometry.coordinates[1]]
+            });
+    }
+    
+ 
+});
 map.on('mouseenter', 'points', () => {
 map.getCanvas().style.cursor = 'pointer';
 });
