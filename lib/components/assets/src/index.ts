@@ -288,4 +288,3 @@ map.getCanvas().style.cursor = 'pointer';
 map.on('mouseleave', 'points', () => {
 map.getCanvas().style.cursor = '';
 });
-
