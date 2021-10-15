@@ -41,7 +41,16 @@ class _HomePageState extends State<HomePage> {
             style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 30),
-          DropDownList(),
+          DropDownList(
+            itemsTitles: [
+              'Футбол',
+              'Волейбол',
+              'Баскетбол',
+              'Плавание',
+            ],
+            masterItemTitle: 'Выбрать всё',
+            title: 'Виды спорта',
+          ),
         ],
       ),
       body: SafeArea(

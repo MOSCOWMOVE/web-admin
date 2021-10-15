@@ -4,18 +4,13 @@ import 'package:moscow_move_mobile/components/custom_scroll_bar.dart';
 import 'package:moscow_move_mobile/components/search_row.dart';
 import 'package:moscow_move_mobile/models/sport_checkbox_state.dart';
 
-final pickEverySport = SportCheckBoxState(title: 'Выбрать всё');
-
-final listOfSport = [
-  SportCheckBoxState(title: 'Футбол'),
-  SportCheckBoxState(title: 'Волейбол'),
-  SportCheckBoxState(title: 'Баскетбол'),
-  SportCheckBoxState(title: 'Плавание'),
-];
 
 class DropDownList extends StatefulWidget {
-  const DropDownList({this.opened = false, Key? key}) : super(key: key);
+  const DropDownList({required this.title, required this.masterItemTitle,required this.itemsTitles, this.opened = false, Key? key}) : super(key: key);
 
+  final List<String> itemsTitles;
+  final String masterItemTitle;
+  final String title;
   final bool opened;
 
   @override
@@ -27,12 +22,16 @@ class _DropDownListState extends State<DropDownList>
   double chevronRotationAngle = -pi * 0.5;
   late bool DropDownListOpened;
   TextEditingController _searchRowController = TextEditingController();
+  late List<SportCheckBoxState> listOfItems;
+  late SportCheckBoxState masterItem;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     DropDownListOpened = widget.opened;
+    listOfItems = widget.itemsTitles.map((title) => SportCheckBoxState(title: title)).toList();
+    masterItem = SportCheckBoxState(title: widget.masterItemTitle);
   }
 
   void onChevronTap() {
@@ -50,7 +49,7 @@ class _DropDownListState extends State<DropDownList>
     return Column(
       children: <Widget>[
         ListTile(
-          title: Text('Виды спорта'),
+          title: Text(widget.title),
           trailing: Transform.rotate(
             angle: chevronRotationAngle,
             child: Icon(Icons.chevron_left),
@@ -77,8 +76,8 @@ class _DropDownListState extends State<DropDownList>
                       onChanged: (text) {},
                       hintText: 'Найти...'),
                 ),
-                _buildGroupSportItem(pickEverySport),
-                ...listOfSport.map((item) => _buildSportItem(item)).toList(),
+                _buildGroupSportItem(masterItem),
+                ...listOfItems.map((item) => _buildSportItem(item)).toList(),
               ],
             ),
           ),
@@ -94,8 +93,8 @@ class _DropDownListState extends State<DropDownList>
         title: Text(item.title),
         onChanged: (value) => setState(() {
               item.value = value!;
-              pickEverySport.value =
-                  listOfSport.every((element) => element.value);
+              masterItem.value =
+                  listOfItems.every((element) => element.value);
             }));
   }
 
@@ -106,7 +105,7 @@ class _DropDownListState extends State<DropDownList>
         title: Text(item.title),
         onChanged: (value) => setState(() {
               item.value = value!;
-              listOfSport.forEach((element) {
+              listOfItems.forEach((element) {
                 element.value = value;
               });
             }));
