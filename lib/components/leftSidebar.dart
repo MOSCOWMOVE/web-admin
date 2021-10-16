@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LeftSidebar extends StatelessWidget {
   const LeftSidebar({ Key key }) : super(key: key);
@@ -15,18 +16,24 @@ class LeftSidebar extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(10),
-          bottomLeft: Radius.circular(10)
+          topLeft: Radius.circular(20),
+          bottomLeft: Radius.circular(20)
         ),
         boxShadow: [
             BoxShadow(
             color: Color.fromRGBO(0,0,0,0.12),
             blurRadius: 20,
-            offset: Offset.fromDirection(0,-8),
             spreadRadius: 0
           )
         ]
       ),
+      child: Padding(
+        padding: EdgeInsets.all(47),
+        child: Column(
+          children: [
+          ],
+        )
+      )
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class RightSidebar extends StatelessWidget {
   RightSidebar({ Key key }) : super(key: key);
@@ -11,14 +12,13 @@ class RightSidebar extends StatelessWidget {
     final double width = MediaQuery.of(context).size.width;
 
     return Container(
-      width: width/8,
+      width: 277,
       height: height,
-      child: Container(),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
-          topRight: Radius.circular(10),
-          bottomRight: Radius.circular(10)
+          topRight: Radius.circular(20),
+          bottomRight: Radius.circular(20)
         ),
         boxShadow: [
             BoxShadow(
@@ -27,8 +27,20 @@ class RightSidebar extends StatelessWidget {
             offset: Offset.fromDirection(0,8),
             spreadRadius: 0
           )
-        ]
+        ],
       ),
+      child: Padding(
+        padding: EdgeInsets.all(47),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SvgPicture.asset("assets/logo.svg"),
+            Text(
+              "Главная"
+            )
+          ],
+        )
+      )
     );
   }
 }
