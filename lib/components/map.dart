@@ -56,23 +56,25 @@ class MapWidget extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    html.window.localStorage['dots'] = jsonEncode(dots);
-    html.window.localStorage['blackTheme'] = 'false';
-    html.window.addEventListener('storage', (e) => {
-            html.window.localStorage['activePoint'] = jsonEncode({"active":false, "id": jsonDecode(html.window.localStorage['activePoint']).id})
-    } );
+
+    storage.setItem('dots', jsonEncode(dots));
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     // ignore: undefined_prefixed_name
     ui.platformViewRegistry.registerViewFactory(
         'map',
             (int id) => html.IFrameElement()
-          ..width = MediaQuery.of(context).size.width.toString()
-          ..height = MediaQuery.of(context).size.height.toString()
+          ..width = (width - 270 * 2).toString()+"px"
+          ..height = height.toString()+"px"
           ..src = 'lib/components/assets/dist/index.html'
-          ..style.border = 'none');
-    return
-      Scaffold(
-      body: HtmlElementView(viewType: "map",)
+          ..style.border = 'none'
+          ..style.height = "100vh"
+          ..style.width = (width - 270 * 2).toString()+"px"
+          ..style.position = "fixed"
+          ..style.left = "270px"
+          );
+    return const Scaffold(
+        body: HtmlElementView(viewType: "map",)
       );
-
   }
 }
