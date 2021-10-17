@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:moscow_move_mobile/components/RightSidebar.dart';
-import 'package:moscow_move_mobile/components/leftSidebar.dart';
+import 'package:moscow_move_mobile/components/sidbebar/RightSidebar.dart';
+import 'package:moscow_move_mobile/components/sidbebar/leftSidebar.dart';
 import 'package:moscow_move_mobile/components/map.dart';
 
 class MapScreen extends StatelessWidget {
@@ -17,7 +17,7 @@ class MapScreen extends StatelessWidget {
             RightSidebar(),
             LeftSidebar()
           ],
-        )
+        ),
       ],
     );
   }

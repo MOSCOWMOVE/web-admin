@@ -10,10 +10,9 @@ style: localStorage.blackTheme == "true"? 'mapbox://styles/mapbox/dark-v10' :'ma
 center: [37.61, 55.7 ], // starting position [lng, lat]
 zoom: 9 // starting zoom
 });
-
 console.log("ща буит локал сторадж")
 console.log(localStorage.getItem("blackTheme"))
-
+map.getCanvas().style.cursor = "default";
 
 export const getCircleCords = (radius:number, steps:number, center:number[]) =>{
     let cords = []

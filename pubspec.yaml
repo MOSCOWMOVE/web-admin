@@ -30,6 +30,9 @@ dependencies:
   mapbox_gl: ^0.12.0
   localstorage: ^4.0.0+1
   flutter_svg: ^0.23.0+1
+  universal_html: ^2.0.8
+  animated_overflow: ^2.0.0
+  google_fonts: ^2.1.0
 
 
 dev_dependencies:
@@ -43,6 +46,22 @@ dev_dependencies:
 flutter:
   assets:
     - assets/logo.svg
+    - assets/arrow.svg
+    - assets/check.svg
+  
+  fonts:
+    - family: Averta CY
+      fonts:
+        - asset: assets/fonts/averta/AvertaCyrillicBlack.otf
+          weight: 700
+        - asset: assets/fonts/averta/AvertaCyrillicSemiBold.otf
+          weight: 600
+        - asset: assets/fonts/averta/AvertaCyrillicExtraBold.otf
+          weight: 800
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/roboto/Roboto-Regular.ttf
+          weight: 400
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
