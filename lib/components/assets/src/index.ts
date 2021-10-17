@@ -2,8 +2,10 @@ import * as mapboxgl from "mapbox-gl";
 import { LibManifestPlugin } from "webpack";
 import img from "./location_pin.png";
 import {getMarkers} from "./parse"
+import {districtData} from "./mo"
+
 (mapboxgl as any).accessToken = 'pk.eyJ1IjoiZmlyZXNpZWh0IiwiYSI6ImNrdW9kemYzbTB4ZGkycHAxbXN2YnIzaGMifQ.G0fl-qVbecucfOvn8OtU4Q';
-        
+
 const map = new mapboxgl.Map({
 container: 'map', // container ID
 style: localStorage.blackTheme == "true"? 'mapbox://styles/mapbox/dark-v10' :'mapbox://styles/mapbox/light-v10', // style URL
@@ -47,7 +49,19 @@ map.on('load', () => {
         
     }
    
-
+    map.addLayer({
+        "id": "districts",
+        "type": "fill",
+        "source": {
+            "type": "geojson",
+            "data": districtData
+        },
+        "minzoom" : 8,
+        'paint': {
+            'fill-color':'#5C5C5C',
+            'fill-opacity': 0.25
+        }
+    });
 
     map.addLayer({
             "id": "outlines",
