@@ -24,25 +24,29 @@ class MapWidget extends StatelessWidget {
             "id" : 1001,
             "cords" : [37.65, 55.88],
             "type" : 500,
-            "amount" : 2
+            "amount" : 2,
+            "area": 50,
         },
         {
             "id" : 1002,
             "cords": [37.55, 55.75],
             "type": 1000,
-            "amount": 5
+            "amount": 5,
+            "area": 500,
         },
         {
             "id" : 1003,
             "cords":  [37.80, 55.69],
             "type": 3000,
-            "amount": 7
+            "amount": 7,
+             "area": 5000,
         },
         {
             "id" : 1004,
             "cords":  [37.47, 55.86],
             "type": 5000,
-            "amount": 10
+            "amount": 10,
+            "area": 50000,
         }
 
         ]
@@ -55,8 +59,7 @@ class MapWidget extends StatelessWidget {
     html.window.localStorage['dots'] = jsonEncode(dots);
     html.window.localStorage['blackTheme'] = 'false';
     html.window.addEventListener('storage', (e) => {
-            print( html.window.localStorage['activePoint'])
-
+            html.window.localStorage['activePoint'] = jsonEncode({"active":false, "id": jsonDecode(html.window.localStorage['activePoint']).id})
     } );
     // ignore: undefined_prefixed_name
     ui.platformViewRegistry.registerViewFactory(
