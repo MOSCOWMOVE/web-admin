@@ -31,6 +31,10 @@ class _SportTypesListState extends State<SportTypesList> {
             children: [
               MyCheckBox(text: "Выделить все", fontWeight: FontWeight.w700),
               const SizedBox(height: 18,),
+              MyCheckBox(text: "Футбол", fontWeight: FontWeight.w600),
+              const SizedBox(height: 18,),
+              MyCheckBox(text: "Футбол", fontWeight: FontWeight.w600),
+              const SizedBox(height: 18,),
               MyCheckBox(text: "Футбол", fontWeight: FontWeight.w600)
             ],
           )

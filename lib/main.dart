@@ -13,6 +13,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        scrollbarTheme: ScrollbarThemeData(
+          thumbColor: MaterialStateProperty.all(const Color(0xffABABDB)),
+          isAlwaysShown: true,
+          thickness: MaterialStateProperty.all(4)
+        ),
         primarySwatch: Colors.blue,
         fontFamily: "Averta CY"
       ),
