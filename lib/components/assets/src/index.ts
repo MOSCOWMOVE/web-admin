@@ -15,6 +15,7 @@ zoom: 9 // starting zoom
 
 let dataMarkers = getMarkers()
 
+
 let markers = dataMarkers.markers
 let markersCoverage = dataMarkers.markersCoverage
 let outlines = dataMarkers.outlines
@@ -136,4 +137,3 @@ map.getCanvas().style.cursor = 'pointer';
 map.on('mouseleave', 'points', () => {
 map.getCanvas().style.cursor = '';
 });
-

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:moscow_move_mobile/screens/home_page.dart';
+import 'package:moscow_move_mobile/screens/map_screen.dart';
 import 'components/map.dart';
 
 void main() {
@@ -14,9 +14,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: "Averta CY"
       ),
       home: Scaffold(
-        body: MapWidget(),
+        body: MapScreen(),
       ),
     );
   }
