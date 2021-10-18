@@ -29,63 +29,67 @@ class RightSidebar extends StatelessWidget {
         ),
         SizedBox(
           height: height - 175 - 10,
-          child: ListView(
-            children: [
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: Column(
-                  children: [
-                    Container(
-                      child: BaseFilterDropDownList(
-                        checkboxes: ["Футбол", "Футбол", "Футбол"],
-                        name: "Виды спорта"
+          child: ScrollConfiguration(
+            behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+            child: ListView(
+              shrinkWrap: true,
+              physics: ClampingScrollPhysics(),
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(right: 20),
+                  child: Column(
+                    children: [
+                      Container(
+                        child: BaseFilterDropDownList(
+                          checkboxes: ["Футбол", "Футбол", "Футбол"],
+                          name: "Виды спорта"
+                        ),
+                        margin: const EdgeInsets.only(
+                          top: 30
+                        ),
                       ),
-                      margin: const EdgeInsets.only(
-                        top: 30
+                      Container(
+                        margin: const EdgeInsets.only(
+                          top: 30
+                        ),
+                        child: BaseFilterDropDownList(
+                          checkboxes: ["Центральный", "Центральный", "Центральный"],
+                          name: "Районы"
+                        )
                       ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(
-                        top: 30
+                      Container(
+                        margin: const EdgeInsets.only(
+                          top: 30
+                        ),
+                        child: BaseFilterDropDownList(
+                          checkboxes: ["Федерация спорта", "Федерация спорта", "Федерация спорта"],
+                          name: "Ведомства"
+                        )
                       ),
-                      child: BaseFilterDropDownList(
-                        checkboxes: ["Центральный", "Центральный", "Центральный"],
-                        name: "Районы"
-                      )
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(
-                        top: 30
+                      Container(
+                        margin: const EdgeInsets.only(
+                          top: 30
+                        ),
+                        child: BaseFilterDropDownList(
+                          checkboxes: ["Открытая", "Закрытая", "Бассейн"],
+                          name: "Тип зоны"
+                        )
                       ),
-                      child: BaseFilterDropDownList(
-                        checkboxes: ["Федерация спорта", "Федерация спорта", "Федерация спорта"],
-                        name: "Ведомства"
-                      )
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(
-                        top: 30
+                      Container(
+                        margin: const EdgeInsets.only(
+                          top: 30
+                        ),
+                        child: BaseFilterDropDownList(
+                          checkboxes: ["500", "1000", "3000", "5000"],
+                          name: "Доступность"
+                        )
                       ),
-                      child: BaseFilterDropDownList(
-                        checkboxes: ["Открытая", "Закрытая", "Бассейн"],
-                        name: "Тип зоны"
-                      )
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(
-                        top: 30
-                      ),
-                      child: BaseFilterDropDownList(
-                        checkboxes: ["500", "1000", "3000", "5000"],
-                        name: "Доступность"
-                      )
-                    ),
-                  ]
-                ),
-              )
-              
-            ],
-          )
+                    ]
+                  ),
+                )
+              ],
+            )
+          ) 
         ),
 
       ],
