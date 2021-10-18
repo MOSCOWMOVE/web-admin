@@ -9,18 +9,11 @@ class ScrollWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (BuildContext ctx, int index) {
-              return children[index];
-            },
-            childCount: children.length
-          )
-        )
-      ],
-    
+    return SizedBox(
+      height: 100,
+      child: ListView(  
+        children: children
+      )
     );
   }
 }

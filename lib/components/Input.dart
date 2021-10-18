@@ -11,7 +11,7 @@ class Input extends StatelessWidget {
   Widget build(BuildContext context) {
     OutlineInputBorder input_border = OutlineInputBorder(
             borderSide: const BorderSide(
-              color: Color(0xff5A5CD8),
+              color: Color(0xffABABDB),
               width: 1,
             ),
             borderRadius: BorderRadius.circular(4)
@@ -20,20 +20,20 @@ class Input extends StatelessWidget {
     return SizedBox(
       height: 32,
       child: TextField(
-        cursorColor: Color(0xff5A5CD8),
+        cursorColor: Color(0xffABABDB),
         style: TextStyle(
-          color: Color(0xff1D1F8B)
+          color: Color(0xffABABDB)
         ),
         decoration: InputDecoration(
           enabledBorder: input_border,
           focusedBorder: input_border,
           contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 8),
-          fillColor: Color(0xff5A5CD8),
-          focusColor: Color(0xff5A5CD8),
+          fillColor: Color(0xffABABDB),
+          focusColor: Color(0xffABABDB),
           hintText: "Найти...",
           hintStyle: GoogleFonts.lato(
             textStyle: TextStyle(
-            color: Color(0xff5A5CD8),
+            color: Color(0xffABABDB),
             fontSize: 12,
             fontFamily: "Roboto"
             )
