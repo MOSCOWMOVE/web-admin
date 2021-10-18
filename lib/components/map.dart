@@ -8,54 +8,53 @@ import 'dart:ui' as ui;
 import 'dart:convert';
 import 'package:localstorage/localstorage.dart';
 
+import '../fetch.dart';
 
 
-class MapWidget extends StatelessWidget {
-  MapWidget({  Key key }) : super(key: key);  
-  
-  
+class Map extends StatefulWidget {
+  const Map({ Key key }) : super(key: key);
+
+  @override
+  _MapState createState() => _MapState();
+}
+
+class _MapState extends State<Map> {
   LocalStorage storage = new LocalStorage('localstorage_app');
 
+  List<dynamic> points = [];
 
-  var dots = { 
-    "markers" : [
-        {
-
-            "id" : 1001,
-            "cords" : [37.65, 55.88],
-            "type" : 500,
-            "amount" : 2,
-            "area": 50,
-        },
-        {
-            "id" : 1002,
-            "cords": [37.55, 55.75],
-            "type": 1000,
-            "amount": 5,
-            "area": 500,
-        },
-        {
-            "id" : 1003,
-            "cords":  [37.80, 55.69],
-            "type": 3000,
-            "amount": 7,
-             "area": 5000,
-        },
-        {
-            "id" : 1004,
-            "cords":  [37.47, 55.86],
-            "type": 5000,
-            "amount": 10,
-            "area": 50000,
+  Future<dynamic> getPointPaginationData(String url) {
+    fetch(url).then(
+      (value)  {
+        //if (value["next"] != null) {
+        //  getPointPaginationData(value["next"]);
+        //}
+        setState(() {
+          points = (value["results"] as List<dynamic>).map((e)  {
+            return {
+            "id" : e["zone_id"],
+            "cords" : [e["position"]["longitude"], e["position"]["latitude"]],
+            "type" : e["accessibility"]["distance"],
+            "amount": 1,
+            "area" : e["square"]};
+          }).toList();
+        });
         }
+      );
+  }
 
-        ]
+  void initState() {
+    getPointPaginationData("api/sport_zones");
+  }
+
+  dynamic dots = { 
+    "markers" : []
     };
-  
 
-  
   @override
   Widget build(BuildContext context) {
+    print(points);
+    dots["markers"] = points;
 
     storage.setItem('dots', jsonEncode(dots));
     double width = MediaQuery.of(context).size.width;

@@ -48,7 +48,6 @@ class BaseSidebar extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: this.children
             )
-            
           )
         )
       )

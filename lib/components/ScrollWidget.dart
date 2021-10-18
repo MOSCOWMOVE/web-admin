@@ -12,9 +12,9 @@ class ScrollWidget extends StatelessWidget {
     return ScrollConfiguration(
       behavior: ScrollConfiguration.of(context).copyWith(scrollbars: true),
       child:  SizedBox(
-        height: 100,
+        height: 200,
         child: ListView(
-          physics: ClampingScrollPhysics(), 
+          physics: ClampingScrollPhysics(),
           shrinkWrap: true,
           children: children
         )

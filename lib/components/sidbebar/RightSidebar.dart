@@ -1,20 +1,50 @@
 // ignore_for_file: file_names
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:moscow_move_mobile/components/DropDownLists/BaseFilterDropDownList.dart';
-import 'package:moscow_move_mobile/components/DropDownLists/SportTypesList.dart';
 import 'package:moscow_move_mobile/components/Text.dart';
-import 'package:moscow_move_mobile/components/DropDownLists/DropDownList.dart';
 import 'package:moscow_move_mobile/components/sidbebar/BaseSidebar.dart';
+import 'package:http/http.dart' as http;
+import 'package:moscow_move_mobile/fetch.dart';
 
-class RightSidebar extends StatelessWidget {
-  RightSidebar({ Key key }) : super(key: key);
 
 
+
+
+class RightSidebar extends StatefulWidget {
+  const RightSidebar({ Key key }) : super(key: key);
 
   @override
+  _RightSidebarState createState() => _RightSidebarState();
+}
+
+class _RightSidebarState extends State<RightSidebar> {
+
+  List<String> sportTypes = [];
+
+  Future<dynamic> getPointPaginationData(String url) {
+    fetch(url).then(
+      (value)  {
+        if (value["next"] != null) {
+          getPointPaginationData(value["next"]);
+        }
+        setState(() {
+          sportTypes.addAll((value["results"] as List<dynamic>).map((e) => e["name"]));
+        });
+        }
+      );
+  }
+
+  void initState() {
+    getPointPaginationData("api/sport_types");
+  }
+  
+  @override
   Widget build(BuildContext context) {
+
     var height = MediaQuery.of(context).size.height;
     return BaseSidebar(
       children: [
@@ -41,7 +71,7 @@ class RightSidebar extends StatelessWidget {
                     children: [
                       Container(
                         child: BaseFilterDropDownList(
-                          checkboxes: ["Футбол", "Футбол", "Футбол"],
+                          checkboxes: sportTypes,
                           name: "Виды спорта"
                         ),
                         margin: const EdgeInsets.only(

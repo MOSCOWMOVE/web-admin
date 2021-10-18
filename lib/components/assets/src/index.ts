@@ -5,7 +5,7 @@ import {getMarkers} from "./parse"
 import {districtData} from "./mo"
 
 (mapboxgl as any).accessToken = 'pk.eyJ1IjoiZmlyZXNpZWh0IiwiYSI6ImNrdW9kemYzbTB4ZGkycHAxbXN2YnIzaGMifQ.G0fl-qVbecucfOvn8OtU4Q';
-localStorage.setItem("blackTheme", "true");
+localStorage.setItem("blackTheme", "false");
 const map = new mapboxgl.Map({
 container: 'map', // container ID
 style: localStorage.blackTheme == "true"? 'mapbox://styles/mapbox/dark-v10' :'mapbox://styles/mapbox/light-v10', // style URL
