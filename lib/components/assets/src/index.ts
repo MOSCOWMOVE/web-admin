@@ -9,7 +9,7 @@ import {getMarkers} from "./parse"
 (mapboxgl as any).accessToken = 'pk.eyJ1IjoiZmlyZXNpZWh0IiwiYSI6ImNrdW9kemYzbTB4ZGkycHAxbXN2YnIzaGMifQ.G0fl-qVbecucfOvn8OtU4Q';
 
  let districs = getDistrits()
-
+localStorage.blackTheme = 'true'
  
 const map = new mapboxgl.Map({
     container: 'map', // container ID
