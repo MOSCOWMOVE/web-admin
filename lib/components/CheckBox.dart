@@ -68,7 +68,7 @@ class _MyCheckBoxState extends State<MyCheckBox> with SingleTickerProviderStateM
                 left: 11
               ),
               child: Mytext(
-                text: widget.text,
+                text: widget.text.length > 15 ? widget.text.substring(0, 12)+"..." : widget.text,
                 fontWeight: widget.fontWeight,
                 fontSize: 14,
               )

@@ -14,6 +14,7 @@ class Mytext extends StatelessWidget {
 
     return Text(
         this.text,
+        overflow: TextOverflow.ellipsis,
         style: TextStyle(
           color: const Color(0xff141548),
           fontFamily: "Averta CY",

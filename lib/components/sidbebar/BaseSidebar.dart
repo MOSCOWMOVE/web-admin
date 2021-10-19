@@ -42,13 +42,12 @@ class BaseSidebar extends StatelessWidget {
           ]
         ),
         child: Padding(
-          padding: const EdgeInsets.all(47),
+          padding: const EdgeInsets.only(top: 47, left: 47, right: 30),
           child: OverflowBox(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: this.children
             )
-            
           )
         )
       )

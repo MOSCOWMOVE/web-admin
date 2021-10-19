@@ -37,9 +37,6 @@ export const getMarkers = () => {
                                 'type': 'Point',
                                 'coordinates': dot.cords
                             },
-                            'properties': {
-                                'title': 'name'
-                            }
                         },
         )
         markersCoverage.push(

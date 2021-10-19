@@ -10,7 +10,7 @@ class MapScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        MapWidget(),
+        Map(),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
