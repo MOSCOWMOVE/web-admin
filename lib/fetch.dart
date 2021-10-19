@@ -9,7 +9,13 @@ Future<dynamic> fetch(String path) async {
       headers: {
         'Accept': 'application/json; charset=unicode'
         });
+  var parsed_res;
+  try {
+    parsed_res = json.decode(utf8.decode(res.bodyBytes));
+  // ignore: empty_catches
+  } on FormatException {
 
-  var parsed_res = json.decode(utf8.decode(res.bodyBytes));
+  }
+  
   return parsed_res;
 }

@@ -28,16 +28,17 @@ class _MapState extends State<Map> {
         //if (value["next"] != null) {
         //  getPointPaginationData(value["next"]);
         //}
-        setState(() {
-          points = (value["results"] as List<dynamic>).map((e)  {
-            return {
-            "id" : e["zone_id"],
-            "cords" : [e["position"]["longitude"], e["position"]["latitude"]],
-            "type" : e["accessibility"]["distance"],
-            "amount": 1,
-            "area" : e["square"]};
-          }).toList();
-        });
+          
+        points = (value["results"] as List<dynamic>).map((e)  {
+          return {
+          "id" : e["zone_id"],
+          "cords" : [e["position"]["longitude"], e["position"]["latitude"]],
+          "type" : e["accessibility"]["distance"],
+          "amount": 1,
+          "area" : e["square"]};
+        }).toList();
+        dots["markers"] = points;
+        storage.setItem("dots", jsonEncode(dots));
         }
       );
   }
@@ -52,8 +53,7 @@ class _MapState extends State<Map> {
 
   @override
   Widget build(BuildContext context) {
-    print(points);
-    dots["markers"] = points;
+    
 
     storage.setItem('dots', jsonEncode(dots));
     double width = MediaQuery.of(context).size.width;

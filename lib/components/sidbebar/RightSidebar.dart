@@ -24,6 +24,8 @@ class RightSidebar extends StatefulWidget {
 class _RightSidebarState extends State<RightSidebar> {
 
   List<String> sportTypes = [];
+  List<String> moscowDistricts = [];
+  List<String> dep_orgs = [];
 
   Future<dynamic> getPointPaginationData(String url) {
     fetch(url).then(
@@ -38,8 +40,36 @@ class _RightSidebarState extends State<RightSidebar> {
       );
   }
 
+  Future<dynamic> getMoscowDistricts(String url) {
+    fetch(url).then(
+      (value)  {
+        if (value["next"] != null) {
+          getPointPaginationData(value["next"]);
+        }
+        setState(() {
+          moscowDistricts.addAll((value["results"] as List<dynamic>).map((e) => e["name"]));
+        });
+        }
+      );
+  }
+
+    Future<dynamic> getDepOrgs(String url) {
+    fetch(url).then(
+      (value)  {
+        if (value["next"] != null) {
+          getPointPaginationData(value["next"]);
+        }
+        setState(() {
+          dep_orgs.addAll((value["results"] as List<dynamic>).map((e) => e["name"]));
+        });
+        }
+      );
+  }
+
   void initState() {
     getPointPaginationData("api/sport_types");
+    getMoscowDistricts("api/people_density");
+    getDepOrgs("api/departmental_orgs");
   }
   
   @override
@@ -83,7 +113,7 @@ class _RightSidebarState extends State<RightSidebar> {
                           top: 30
                         ),
                         child: BaseFilterDropDownList(
-                          checkboxes: ["Центральный", "Центральный", "Центральный"],
+                          checkboxes: moscowDistricts,
                           name: "Районы"
                         )
                       ),
@@ -92,7 +122,7 @@ class _RightSidebarState extends State<RightSidebar> {
                           top: 30
                         ),
                         child: BaseFilterDropDownList(
-                          checkboxes: ["Федерация спорта", "Федерация спорта", "Федерация спорта"],
+                          checkboxes: dep_orgs,
                           name: "Ведомства"
                         )
                       ),
