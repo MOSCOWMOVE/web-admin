@@ -68,9 +68,9 @@ class _MapState extends State<Map> {
           ..src = 'lib/components/assets/dist/index.html'
           ..style.border = 'none'
           ..style.height = "100vh"
-          ..style.width = (width - 270 * 2).toString()+"px"
+          ..style.width = (width - 260 * 2).toString()+"px"
           ..style.position = "fixed"
-          ..style.left = "270px"
+          ..style.left = "260px",
           );
     return const Scaffold(
         body: HtmlElementView(viewType: "map",)
