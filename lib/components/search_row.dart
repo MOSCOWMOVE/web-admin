@@ -23,6 +23,7 @@ class _SearchRowState extends State<SearchRow> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(bottom: 12, left: 3),
       width: MediaQuery.of(context).size.width * 0.5,
       height: searchRowHeight,
       decoration: BoxDecoration(
@@ -33,6 +34,24 @@ class _SearchRowState extends State<SearchRow> {
       child: TextField(
         controller: widget.controller,
         decoration: InputDecoration(
+          suffixIcon: widget.controller.text.isNotEmpty
+              ? Padding(
+                  padding: EdgeInsets.only(top: 3),
+                  child: GestureDetector(
+                    child: Icon(
+                      Icons.close,
+                      color: Color(0xff5A5CD8),
+                    ),
+                    onTap: () {
+                      setState(() {
+                        widget.controller.clear();
+                        widget.onChanged('');
+                        FocusScope.of(context).requestFocus(FocusNode());
+                      });
+                    },
+                  ),
+                )
+              : null,
           border: InputBorder.none,
           hintText: widget.hintText,
           hintStyle: TextStyle(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 
+// Not used
+
 class CustomScrollBar extends StatefulWidget {
   final BoxScrollView Function(ScrollController controller) builder;
 

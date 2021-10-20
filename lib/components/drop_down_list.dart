@@ -4,9 +4,14 @@ import 'package:moscow_move_mobile/components/custom_scroll_bar.dart';
 import 'package:moscow_move_mobile/components/search_row.dart';
 import 'package:moscow_move_mobile/models/sport_checkbox_state.dart';
 
-
 class DropDownList extends StatefulWidget {
-  const DropDownList({required this.title, required this.masterItemTitle,required this.itemsTitles, this.opened = false, Key? key}) : super(key: key);
+  const DropDownList(
+      {required this.title,
+      required this.masterItemTitle,
+      required this.itemsTitles,
+      this.opened = false,
+      Key? key})
+      : super(key: key);
 
   final List<String> itemsTitles;
   final String masterItemTitle;
@@ -24,17 +29,21 @@ class _DropDownListState extends State<DropDownList>
   TextEditingController _searchRowController = TextEditingController();
   late List<SportCheckBoxState> listOfItems;
   late SportCheckBoxState masterItem;
+  late List<SportCheckBoxState> list;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     DropDownListOpened = widget.opened;
-    listOfItems = widget.itemsTitles.map((title) => SportCheckBoxState(title: title)).toList();
+    listOfItems = widget.itemsTitles
+        .map((title) => SportCheckBoxState(title: title))
+        .toList();
     masterItem = SportCheckBoxState(title: widget.masterItemTitle);
+    list = listOfItems;
   }
 
-  void onChevronTap() {
+  void onMasterItemTap() {
     setState(() {
       if (!DropDownListOpened) {
         chevronRotationAngle = -pi * 0.5;
@@ -57,7 +66,7 @@ class _DropDownListState extends State<DropDownList>
           onTap: () {
             setState(() {
               DropDownListOpened = !DropDownListOpened;
-              onChevronTap();
+              onMasterItemTap();
             });
           },
         ),
@@ -73,11 +82,11 @@ class _DropDownListState extends State<DropDownList>
                   padding: EdgeInsets.symmetric(horizontal: 5, vertical: 7),
                   child: SearchRow(
                       controller: _searchRowController,
-                      onChanged: (text) {},
+                      onChanged: _search,
                       hintText: 'Найти...'),
                 ),
                 _buildGroupSportItem(masterItem),
-                ...listOfItems.map((item) => _buildSportItem(item)).toList(),
+                ...list.map((item) => _buildSportItem(item)).toList(),
               ],
             ),
           ),
@@ -87,28 +96,52 @@ class _DropDownListState extends State<DropDownList>
   }
 
   Widget _buildSportItem(SportCheckBoxState item) {
-    return CheckboxListTile(
-        controlAffinity: ListTileControlAffinity.leading,
-        value: item.value,
-        title: Text(item.title),
-        onChanged: (value) => setState(() {
-              item.value = value!;
-              masterItem.value =
-                  listOfItems.every((element) => element.value);
-            }));
+    return item.show
+        ? CheckboxListTile(
+            controlAffinity: ListTileControlAffinity.leading,
+            value: item.value,
+            title: Text(item.title),
+            onChanged: (value) => setState(() {
+                  item.value = value!;
+                  masterItem.value =
+                      listOfItems.every((element) => element.value);
+                }))
+        : SizedBox();
   }
 
   Widget _buildGroupSportItem(SportCheckBoxState item) {
-    return CheckboxListTile(
-        controlAffinity: ListTileControlAffinity.leading,
-        value: item.value,
-        title: Text(item.title),
-        onChanged: (value) => setState(() {
-              item.value = value!;
-              listOfItems.forEach((element) {
-                element.value = value;
-              });
-            }));
+    return item.show
+        ? CheckboxListTile(
+            controlAffinity: ListTileControlAffinity.leading,
+            value: item.value,
+            title: Text(item.title),
+            onChanged: (value) => setState(() {
+                  item.value = value!;
+                  listOfItems.forEach((element) {
+                    element.value = value;
+                  });
+                }))
+        : SizedBox();
+  }
+
+  void _search(String text) {
+    text = text.toLowerCase();
+
+    setState(() {
+      if (_searchRowController.text.isNotEmpty)
+        masterItem.show = false;
+      else
+        masterItem.show = true;
+
+      listOfItems.forEach((element) {
+        final name = element.title.toLowerCase();
+        if (name.contains(text)) {
+          element.show = true;
+        } else {
+          element.show = false;
+        }
+      });
+    });
   }
 
   // List<Widget> _buildListOfSport() {
