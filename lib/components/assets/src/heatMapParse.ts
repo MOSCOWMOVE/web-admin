@@ -25,3 +25,29 @@ export const getDistrits = () => {
     return districtData
 }
 
+export const getSportZonesDots = () =>{
+    let sportZonesData = require('./sportZones.json')
+
+    localStorage.setItem("sportZonesData", JSON.stringify(sportZonesData))
+
+    let dots = {
+        "type": "FeatureCollection",
+        "features":new Array()
+    } as any
+
+    JSON.parse(localStorage.getItem("sportZonesData")).results.forEach((dot:any) => {
+        dots.features.push(
+            {
+                "type":"Feature",
+                "properies":{
+                    "square": dot.square
+                },
+                "geometry":{
+                    "type":"Point",
+                    "coordinates": [ dot.position.longitude, dot.position.latitude] 
+                }
+            } as any
+        )
+    });
+    return dots
+}

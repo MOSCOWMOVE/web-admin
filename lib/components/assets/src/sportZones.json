@@ -1,0 +1,1867 @@
+
+{
+    "count": 10556,
+    "next": "http://62.84.122.44:8000/api/sort_zones?limit=100&offset=100",
+    "previous": null,
+    "results": [
+        {
+            "position": {
+                "latitude": 55.724997273177095,
+                "longitude": 37.479707885557765
+            },
+            "organization": 2366,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2240,
+                2241,
+                2278
+            ],
+            "name": "Крытое сооружение с искусственным льдом «МЧС России»",
+            "zone_id": "108778",
+            "square": 1800.0
+        },
+        {
+            "position": {
+                "latitude": 55.76057,
+                "longitude": 37.673492
+            },
+            "organization": 2367,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2241,
+                2242,
+                2243,
+                2244
+            ],
+            "name": "Стадион «Сокол»",
+            "zone_id": "106117",
+            "square": 1500.0
+        },
+        {
+            "position": {
+                "latitude": 55.80248047413373,
+                "longitude": 37.5292134118028
+            },
+            "organization": 2368,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2242,
+                2243,
+                2244,
+                2245,
+                2246,
+                2247,
+                2248,
+                2249,
+                2250,
+                2251,
+                2252,
+                2253,
+                2254,
+                2255,
+                2256,
+                2257,
+                2258,
+                2259,
+                2260,
+                2261,
+                2262,
+                2263
+            ],
+            "name": "Спортивный комплекс высшего учебного заведения «Московский автомобильно-дорожный государственный технический университет»",
+            "zone_id": "109804",
+            "square": 497.0
+        },
+        {
+            "position": {
+                "latitude": 55.82157496684546,
+                "longitude": 37.507042365081766
+            },
+            "organization": 2369,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2243,
+                2247,
+                2251,
+                2261,
+                2262,
+                2264
+            ],
+            "name": "Физкультурно-оздоровительный комплекс Академии Управления МВД РФ",
+            "zone_id": "103280",
+            "square": 278.4
+        },
+        {
+            "position": {
+                "latitude": 55.81919439522011,
+                "longitude": 37.50609079004759
+            },
+            "organization": 2369,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2261
+            ],
+            "name": "Спортивный зал Академии управления Министерства внутренних дел",
+            "zone_id": "103483",
+            "square": 116.8
+        },
+        {
+            "position": {
+                "latitude": 55.835809575742466,
+                "longitude": 37.53853442126537
+            },
+            "organization": 2370,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2247,
+                2252,
+                2265
+            ],
+            "name": "Академические пруды",
+            "zone_id": "109352",
+            "square": 100.0
+        },
+        {
+            "position": {
+                "latitude": 55.73406657043467,
+                "longitude": 37.50204211880842
+            },
+            "organization": 2371,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2266
+            ],
+            "name": "Можайский плодовый сад",
+            "zone_id": "109351",
+            "square": 3000.0
+        },
+        {
+            "position": {
+                "latitude": 55.708553378128265,
+                "longitude": 37.82853782212708
+            },
+            "organization": 2372,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2240,
+                2242
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "104446",
+            "square": 640.0
+        },
+        {
+            "position": {
+                "latitude": 55.71333396064217,
+                "longitude": 37.797519614230936
+            },
+            "organization": 2372,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2240,
+                2242,
+                2243
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "104493",
+            "square": 704.0
+        },
+        {
+            "position": {
+                "latitude": 55.741959197060886,
+                "longitude": 37.3911348345062
+            },
+            "organization": 2373,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2256
+            ],
+            "name": "Лыжная трасса на Маршала Тимошенко",
+            "zone_id": "105146",
+            "square": 10000.0
+        },
+        {
+            "position": {
+                "latitude": 55.873800846631646,
+                "longitude": 37.52984098955189
+            },
+            "organization": 2374,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2267
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "109566",
+            "square": 120.0
+        },
+        {
+            "position": {
+                "latitude": 55.83250730397717,
+                "longitude": 37.535280299865114
+            },
+            "organization": 2368,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2243,
+                2258,
+                2290
+            ],
+            "name": "Спортивный комплекс высшего учебного заведения «Московский авиационный институт»",
+            "zone_id": "103320",
+            "square": 180.0
+        },
+        {
+            "position": {
+                "latitude": 55.828147,
+                "longitude": 37.531981
+            },
+            "organization": 2370,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2256
+            ],
+            "name": "Тимирязевский лесопарк",
+            "zone_id": "103318",
+            "square": 3000.0
+        },
+        {
+            "position": {
+                "latitude": 55.61355145162593,
+                "longitude": 37.541760510453784
+            },
+            "organization": 2375,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2261
+            ],
+            "name": "Центр спорта и досуга Атлант»",
+            "zone_id": "101585",
+            "square": 48.0
+        },
+        {
+            "position": {
+                "latitude": 55.60894061709213,
+                "longitude": 37.71574450507761
+            },
+            "organization": 2376,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2253,
+                2268
+            ],
+            "name": "Спортивно-досуговый клуб «Движение»",
+            "zone_id": "102078",
+            "square": 78.5
+        },
+        {
+            "position": {
+                "latitude": 55.670371,
+                "longitude": 37.659263
+            },
+            "organization": 2377,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2255
+            ],
+            "name": "Центр досуга «Садовники»",
+            "zone_id": "109878",
+            "square": 42.0
+        },
+        {
+            "position": {
+                "latitude": 55.871895,
+                "longitude": 37.491682
+            },
+            "organization": 2378,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2255
+            ],
+            "name": "Досуговый центр",
+            "zone_id": "109817",
+            "square": 144.0
+        },
+        {
+            "position": {
+                "latitude": 55.621633,
+                "longitude": 37.753982
+            },
+            "organization": 2377,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2251,
+                2253,
+                2255,
+                2269,
+                2270
+            ],
+            "name": "Центр досуга и спорта «Маяк»",
+            "zone_id": "109880",
+            "square": 400.0
+        },
+        {
+            "position": {
+                "latitude": 55.70382793817801,
+                "longitude": 37.666089536201014
+            },
+            "organization": 2379,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2243
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "102854",
+            "square": 1330.0
+        },
+        {
+            "position": {
+                "latitude": 55.896843600634284,
+                "longitude": 37.53003589053591
+            },
+            "organization": 2374,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2244,
+                2261
+            ],
+            "name": "Государственное бюджетное учреждение спортивно досуговый центр Радуга",
+            "zone_id": "103354",
+            "square": 114.0
+        },
+        {
+            "position": {
+                "latitude": 55.8369412020304,
+                "longitude": 37.48990148941039
+            },
+            "organization": 2380,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2264
+            ],
+            "name": "Федерация Мэй Хуа Бань Кун Фу",
+            "zone_id": "103330",
+            "square": 21.4
+        },
+        {
+            "position": {
+                "latitude": 55.84864,
+                "longitude": 37.475657
+            },
+            "organization": 2381,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2271,
+                2272,
+                2273,
+                2274
+            ],
+            "name": "Досуговый центр «Военно-патриотический клуб «Комбат»»",
+            "zone_id": "103400",
+            "square": 450.0
+        },
+        {
+            "position": {
+                "latitude": 55.836716,
+                "longitude": 37.487146
+            },
+            "organization": 2380,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2250,
+                2253,
+                2260,
+                2264,
+                2275,
+                2276,
+                2277
+            ],
+            "name": "Автономная некоммерческая организация спортивный клуб «Ровесник-Спорт»",
+            "zone_id": "103445",
+            "square": 92.4
+        },
+        {
+            "position": {
+                "latitude": 55.86752965823757,
+                "longitude": 37.471119897037696
+            },
+            "organization": 2382,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2242,
+                2243
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "106721",
+            "square": 430.4
+        },
+        {
+            "position": {
+                "latitude": 55.89056295006679,
+                "longitude": 37.524247429568696
+            },
+            "organization": 2374,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2251
+            ],
+            "name": "Досуговый центр «Союз-каратэ-до»",
+            "zone_id": "103356",
+            "square": 50.0
+        },
+        {
+            "position": {
+                "latitude": 55.677930281868306,
+                "longitude": 37.59573897415019
+            },
+            "organization": 2383,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2261
+            ],
+            "name": "Спортивно досуговый центр «Юго-Запад»",
+            "zone_id": "101324",
+            "square": 226.6
+        },
+        {
+            "position": {
+                "latitude": 55.67660522666586,
+                "longitude": 37.60787430653071
+            },
+            "organization": 2383,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2261
+            ],
+            "name": "Молодежный центр «Котловка»",
+            "zone_id": "101597",
+            "square": 74.8
+        },
+        {
+            "position": {
+                "latitude": 55.886723614756974,
+                "longitude": 37.52049133596798
+            },
+            "organization": 2369,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2240,
+                2241,
+                2242
+            ],
+            "name": "Центр профессиональной подготовки Главное управление МВД России по г. Москве",
+            "zone_id": "110107",
+            "square": 600.0
+        },
+        {
+            "position": {
+                "latitude": 55.599941,
+                "longitude": 37.536356
+            },
+            "organization": 2375,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2240,
+                2242,
+                2243,
+                2278
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "121748",
+            "square": 250.0
+        },
+        {
+            "position": {
+                "latitude": 55.647052662818034,
+                "longitude": 37.49912594607214
+            },
+            "organization": 2384,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2242,
+                2243,
+                2247,
+                2279
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "107718",
+            "square": 309.5
+        },
+        {
+            "position": {
+                "latitude": 55.793708,
+                "longitude": 37.536832
+            },
+            "organization": 2385,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2246,
+                2250,
+                2259,
+                2280,
+                2281,
+                2283
+            ],
+            "name": "Дворец спортивных единоборств ЦСКА",
+            "zone_id": "121359",
+            "square": 237.6
+        },
+        {
+            "position": {
+                "latitude": 55.49731842694614,
+                "longitude": 37.57984435123982
+            },
+            "organization": 2386,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2240,
+                2241,
+                2242,
+                2243,
+                2247
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "109453",
+            "square": 364.0
+        },
+        {
+            "position": {
+                "latitude": 55.700055,
+                "longitude": 37.660269
+            },
+            "organization": 2379,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2282
+            ],
+            "name": "Комплекс спортивных сооружений",
+            "zone_id": "121752",
+            "square": 600.0
+        },
+        {
+            "position": {
+                "latitude": 55.64821465702841,
+                "longitude": 37.536977224619804
+            },
+            "organization": 2387,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2281
+            ],
+            "name": "Досуговый центр «Гладиатор»",
+            "zone_id": "103651",
+            "square": 80.0
+        },
+        {
+            "position": {
+                "latitude": 55.643629724520764,
+                "longitude": 37.50793283238681
+            },
+            "organization": 2387,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2283
+            ],
+            "name": "Досуговый центр «Гладиатор»",
+            "zone_id": "103653",
+            "square": 230.0
+        },
+        {
+            "position": {
+                "latitude": 55.70597390739937,
+                "longitude": 37.57973519964306
+            },
+            "organization": 2388,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2249,
+                2260,
+                2284,
+                2291
+            ],
+            "name": "Досуговый центр «Космос»",
+            "zone_id": "101446",
+            "square": 120.0
+        },
+        {
+            "position": {
+                "latitude": 55.736141866595396,
+                "longitude": 37.65415791868201
+            },
+            "organization": 2389,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2251
+            ],
+            "name": "Досуговый центр «Тигренок»",
+            "zone_id": "103179",
+            "square": 110.0
+        },
+        {
+            "position": {
+                "latitude": 55.673473,
+                "longitude": 37.614464
+            },
+            "organization": 2390,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2261
+            ],
+            "name": "Спортивный зал «УФСПП России»",
+            "zone_id": "121504",
+            "square": 1400.0
+        },
+        {
+            "position": {
+                "latitude": 55.866713,
+                "longitude": 37.432403
+            },
+            "organization": 2391,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2262
+            ],
+            "name": "Комплекс спортивных сооружений «Пансионат для ветеранов труда №9»",
+            "zone_id": "121772",
+            "square": 42.8
+        },
+        {
+            "position": {
+                "latitude": 55.782218,
+                "longitude": 37.633266
+            },
+            "organization": 2391,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2261,
+                2285
+            ],
+            "name": "Центр творчества на Вадковском, подразделение «Россия Молодая»",
+            "zone_id": "121775",
+            "square": 160.0
+        },
+        {
+            "position": {
+                "latitude": 55.714987,
+                "longitude": 37.720843
+            },
+            "organization": 2368,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2255
+            ],
+            "name": "Спортивный комплекс высшего учебного заведения",
+            "zone_id": "121816",
+            "square": 24.0
+        },
+        {
+            "position": {
+                "latitude": 55.893162,
+                "longitude": 37.393389
+            },
+            "organization": 2392,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2243
+            ],
+            "name": "Дворовая площадка",
+            "zone_id": "100508",
+            "square": 800.0
+        },
+        {
+            "position": {
+                "latitude": 55.817365,
+                "longitude": 37.509873
+            },
+            "organization": 2380,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2284
+            ],
+            "name": "Досуговый центр «Развитие»",
+            "zone_id": "109468",
+            "square": 34.1
+        },
+        {
+            "position": {
+                "latitude": 55.702952,
+                "longitude": 37.530822
+            },
+            "organization": 2368,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2252,
+                2286,
+                2287
+            ],
+            "name": "Спортивный комплекс высшего учебного заведения «Московский государственный университет имени Михаила Васильевича Ломоносова»",
+            "zone_id": "102435",
+            "square": 264.0
+        },
+        {
+            "position": {
+                "latitude": 55.6465320004974,
+                "longitude": 37.50929642904804
+            },
+            "organization": 2368,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2242,
+                2252,
+                2261,
+                2269,
+                2288,
+                2292,
+                2293
+            ],
+            "name": "Спортивный комплекс высшего учебного заведения ИБХ РАН",
+            "zone_id": "103324",
+            "square": 175.0
+        },
+        {
+            "position": {
+                "latitude": 55.650299561410385,
+                "longitude": 37.60464961736285
+            },
+            "organization": 2393,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2243,
+                2259,
+                2289,
+                2296
+            ],
+            "name": "Государственное бюджетное учреждение города Москвы спортивно-досуговый центр Ратмир",
+            "zone_id": "101471",
+            "square": 40.0
+        },
+        {
+            "position": {
+                "latitude": 55.7905433745234,
+                "longitude": 37.59762953880687
+            },
+            "organization": 2391,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2243,
+                2261,
+                2294,
+                2295
+            ],
+            "name": "Детский досуговый центр «служебный»",
+            "zone_id": "102388",
+            "square": 288.0
+        },
+        {
+            "position": {
+                "latitude": 55.83416540425441,
+                "longitude": 37.557471697214815
+            },
+            "organization": 2370,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2262,
+                2297,
+                2298
+            ],
+            "name": "Стрелковый тир РГАУ-МСХА имени К.А. Тимирязева",
+            "zone_id": "121371",
+            "square": 134.7
+        },
+        {
+            "position": {
+                "latitude": 55.73371804506757,
+                "longitude": 37.523308324501315
+            },
+            "organization": 2385,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2262,
+                2298,
+                2299,
+                2300,
+                2301
+            ],
+            "name": "Стрелковый клуб «РОСТО»",
+            "zone_id": "105087",
+            "square": 150.0
+        },
+        {
+            "position": {
+                "latitude": 55.81575917333392,
+                "longitude": 37.55589001632267
+            },
+            "organization": 2373,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2252,
+                2261,
+                2292
+            ],
+            "name": "Оздоровительный комплекс Шереметьевский",
+            "zone_id": "121433",
+            "square": 84.0
+        },
+        {
+            "position": {
+                "latitude": 55.705488,
+                "longitude": 37.493308
+            },
+            "organization": 2394,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2242,
+                2243,
+                2254
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "121899",
+            "square": 476.0
+        },
+        {
+            "position": {
+                "latitude": 55.572793,
+                "longitude": 37.591395
+            },
+            "organization": 2383,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2246
+            ],
+            "name": "Досуговый центр «Спорт-Бутово»",
+            "zone_id": "121911",
+            "square": 648.0
+        },
+        {
+            "position": {
+                "latitude": 55.723962,
+                "longitude": 37.568408
+            },
+            "organization": 2395,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2246,
+                2261,
+                2268,
+                2270,
+                2302
+            ],
+            "name": "Спортивный зал «Хамовники»",
+            "zone_id": "116447",
+            "square": 38.0
+        },
+        {
+            "position": {
+                "latitude": 55.509224386599975,
+                "longitude": 37.5345514872843
+            },
+            "organization": 2385,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2243
+            ],
+            "name": "Плоскостное спортивное сооружение",
+            "zone_id": "112363",
+            "square": 3915.0
+        },
+        {
+            "position": {
+                "latitude": 55.776203,
+                "longitude": 37.57616
+            },
+            "organization": 2396,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2242
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "106904",
+            "square": 71.0
+        },
+        {
+            "position": {
+                "latitude": 55.787001,
+                "longitude": 37.579556
+            },
+            "organization": 2396,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2261,
+                2303
+            ],
+            "name": "Парк народный «парк Правды»",
+            "zone_id": "109469",
+            "square": 9000.0
+        },
+        {
+            "position": {
+                "latitude": 55.880258,
+                "longitude": 37.523483
+            },
+            "organization": 2374,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2261
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "121156",
+            "square": 450.0
+        },
+        {
+            "position": {
+                "latitude": 55.680869,
+                "longitude": 37.519252
+            },
+            "organization": 2397,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2261,
+                2304,
+                2305
+            ],
+            "name": "Учреждение культурно-досугового типа «Ломоносовец»",
+            "zone_id": "116439",
+            "square": 54.4
+        },
+        {
+            "position": {
+                "latitude": 55.59689,
+                "longitude": 37.597342
+            },
+            "organization": 2368,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2243,
+                2261,
+                2268,
+                2270,
+                2279
+            ],
+            "name": "Спортивный комплекс высшего учебного заведения",
+            "zone_id": "102149",
+            "square": 162.0
+        },
+        {
+            "position": {
+                "latitude": 55.843381042784,
+                "longitude": 37.434059766864
+            },
+            "organization": 2398,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2242,
+                2243,
+                2247,
+                2261,
+                2270
+            ],
+            "name": "Спортивный комплекс образовательного учреждения",
+            "zone_id": "119861",
+            "square": 98.0
+        },
+        {
+            "position": {
+                "latitude": 55.543638,
+                "longitude": 37.544342
+            },
+            "organization": 2386,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2261
+            ],
+            "name": "Досуговый центр «Южное Бутово»",
+            "zone_id": "103265",
+            "square": 30.0
+        },
+        {
+            "position": {
+                "latitude": 55.539442292493256,
+                "longitude": 37.538127252639555
+            },
+            "organization": 2386,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2261
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "109908",
+            "square": 20.0
+        },
+        {
+            "position": {
+                "latitude": 55.53196560289567,
+                "longitude": 37.524525386091724
+            },
+            "organization": 2386,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2242
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "107437",
+            "square": 220.0
+        },
+        {
+            "position": {
+                "latitude": 55.53536647459945,
+                "longitude": 37.50143236399896
+            },
+            "organization": 2386,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2261,
+                2279
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "109912",
+            "square": 48.0
+        },
+        {
+            "position": {
+                "latitude": 55.50147869042277,
+                "longitude": 37.57807162698359
+            },
+            "organization": 2386,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2261
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "109911",
+            "square": 20.0
+        },
+        {
+            "position": {
+                "latitude": 55.538438,
+                "longitude": 37.542231
+            },
+            "organization": 2386,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2279
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "116618",
+            "square": 56.0
+        },
+        {
+            "position": {
+                "latitude": 55.61673234526227,
+                "longitude": 37.6016440766794
+            },
+            "organization": 2399,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2254
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "102145",
+            "square": 480.0
+        },
+        {
+            "position": {
+                "latitude": 55.82608949164502,
+                "longitude": 37.532222076721126
+            },
+            "organization": 2400,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2303
+            ],
+            "name": "Парк, озелененная городская территория",
+            "zone_id": "109889",
+            "square": 20000.0
+        },
+        {
+            "position": {
+                "latitude": 55.799897,
+                "longitude": 37.526465
+            },
+            "organization": 2401,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2273,
+                2301,
+                2306
+            ],
+            "name": "Досуговый центр «Хорошевка»",
+            "zone_id": "103702",
+            "square": 15.0
+        },
+        {
+            "position": {
+                "latitude": 55.781788,
+                "longitude": 37.527552
+            },
+            "organization": 2385,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2240,
+                2241,
+                2242,
+                2243
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "106811",
+            "square": 162.0
+        },
+        {
+            "position": {
+                "latitude": 55.816691420041984,
+                "longitude": 37.50959919671629
+            },
+            "organization": 2380,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2261,
+                2279
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "121295",
+            "square": 15.0
+        },
+        {
+            "position": {
+                "latitude": 55.790388,
+                "longitude": 37.553217
+            },
+            "organization": 2396,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2261
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "109480",
+            "square": 88.2
+        },
+        {
+            "position": {
+                "latitude": 55.71985385424881,
+                "longitude": 37.60078238486235
+            },
+            "organization": 2368,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2242,
+                2243,
+                2244,
+                2247
+            ],
+            "name": "Спортивный комплекс высшего учебного заведения",
+            "zone_id": "102363",
+            "square": 2160.0
+        },
+        {
+            "position": {
+                "latitude": 55.78508528870175,
+                "longitude": 37.639435569073285
+            },
+            "organization": 2402,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2261,
+                2284,
+                2293
+            ],
+            "name": "Досуговый центр «Диалог»",
+            "zone_id": "102164",
+            "square": 84.0
+        },
+        {
+            "position": {
+                "latitude": 55.77012709427176,
+                "longitude": 37.640347574476415
+            },
+            "organization": 2403,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2246,
+                2261
+            ],
+            "name": "Досуговый центр «Российский центр каскадеров «Трюк»",
+            "zone_id": "100047",
+            "square": 180.0
+        },
+        {
+            "position": {
+                "latitude": 55.771975796752336,
+                "longitude": 37.64218410724093
+            },
+            "organization": 2403,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2307
+            ],
+            "name": "Учебно-физкультурный комплекс добровольная спортивная организация «Русская Земля»",
+            "zone_id": "100128",
+            "square": 108.0
+        },
+        {
+            "position": {
+                "latitude": 55.8006,
+                "longitude": 37.802221
+            },
+            "organization": 2398,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2242,
+                2261
+            ],
+            "name": "Спортивный комплекс образовательного учреждения",
+            "zone_id": "116143",
+            "square": 312.0
+        },
+        {
+            "position": {
+                "latitude": 55.477368,
+                "longitude": 37.303297
+            },
+            "organization": 2404,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2261
+            ],
+            "name": "Спортивный комплекс дошкольного образовательного учреждения",
+            "zone_id": "120640",
+            "square": 96.0
+        },
+        {
+            "position": {
+                "latitude": 55.763809783017194,
+                "longitude": 37.60894237759832
+            },
+            "organization": 2405,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2247,
+                2255,
+                2284
+            ],
+            "name": "Досуговый центр «Ковчег»",
+            "zone_id": "103031",
+            "square": 160.0
+        },
+        {
+            "position": {
+                "latitude": 55.614358,
+                "longitude": 37.549777
+            },
+            "organization": 2375,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2261
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "116263",
+            "square": 40.0
+        },
+        {
+            "position": {
+                "latitude": 55.6188169435279,
+                "longitude": 37.54077630919205
+            },
+            "organization": 2375,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2261
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "116262",
+            "square": 60.0
+        },
+        {
+            "position": {
+                "latitude": 55.65387664871434,
+                "longitude": 37.39431011010361
+            },
+            "organization": 2406,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2266,
+                2303
+            ],
+            "name": "Парк (озелененная городская территория) «Центральный»",
+            "zone_id": "109597",
+            "square": 3250.0
+        },
+        {
+            "position": {
+                "latitude": 55.799208,
+                "longitude": 37.765714
+            },
+            "organization": 2367,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2242,
+                2254,
+                2308
+            ],
+            "name": "Спортивный комплекс высшего учебного заведения «Теннисный центр Российского государственного университета физической культуры, спорта, молодёжи и туризма»",
+            "zone_id": "103596",
+            "square": 512.0
+        },
+        {
+            "position": {
+                "latitude": 55.64815863483746,
+                "longitude": 37.65225536682631
+            },
+            "organization": 2368,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2261
+            ],
+            "name": "Спортивный комплекс высшего учебного заведения «МИФИ»",
+            "zone_id": "113431",
+            "square": 288.0
+        },
+        {
+            "position": {
+                "latitude": 55.731982,
+                "longitude": 37.607529
+            },
+            "organization": 2368,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2242,
+                2252,
+                2261
+            ],
+            "name": "Спортивный комплекс образовательного учреждения «Московская центральная художественная школа при Российской академии художеств»",
+            "zone_id": "103156",
+            "square": 200.0
+        },
+        {
+            "position": {
+                "latitude": 55.64478,
+                "longitude": 37.530148
+            },
+            "organization": 2368,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2252,
+                2255,
+                2261
+            ],
+            "name": "Спортивный комплекс высшего учебного заведения «Металлург»",
+            "zone_id": "101325",
+            "square": 400.0
+        },
+        {
+            "position": {
+                "latitude": 55.747475,
+                "longitude": 37.658473
+            },
+            "organization": 2407,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2261
+            ],
+            "name": "Спортивный комплекс среднего профессионального образовательного учреждения «ГБПОУ Департамента здравоохранения города Москвы «Медицинский колледж № 7»",
+            "zone_id": "122234",
+            "square": 98.0
+        },
+        {
+            "position": {
+                "latitude": 55.65443961197327,
+                "longitude": 37.56464311674039
+            },
+            "organization": 2408,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2261,
+                2309
+            ],
+            "name": "Московский дворец ушу ГБОУ «ЦСиО «МЭШ» Москомспорта",
+            "zone_id": "108235",
+            "square": 922.6
+        },
+        {
+            "position": {
+                "latitude": 55.706944,
+                "longitude": 37.481864
+            },
+            "organization": 2391,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2261
+            ],
+            "name": "Спортивный комплекс учреждения социальной защиты населения",
+            "zone_id": "122245",
+            "square": 30.0
+        },
+        {
+            "position": {
+                "latitude": 55.678514,
+                "longitude": 37.44585
+            },
+            "organization": 2391,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2261
+            ],
+            "name": "Спортивный комплекс учреждения социальной защиты населения",
+            "zone_id": "122246",
+            "square": 30.0
+        },
+        {
+            "position": {
+                "latitude": 55.65851024236863,
+                "longitude": 37.590330783017016
+            },
+            "organization": 2383,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2303
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "108852",
+            "square": 20.0
+        },
+        {
+            "position": {
+                "latitude": 55.675609515769516,
+                "longitude": 37.65123652629977
+            },
+            "organization": 2368,
+            "accessibility": {
+                "distance": 3000,
+                "name": "Окружное"
+            },
+            "sportTypes": [
+                2252,
+                2260,
+                2261,
+                2268,
+                2270
+            ],
+            "name": "Спортивный комплекс высшего учебного заведения «РАНХиГС»",
+            "zone_id": "100469",
+            "square": 150.0
+        },
+        {
+            "position": {
+                "latitude": 55.85751016538652,
+                "longitude": 37.47914313863013
+            },
+            "organization": 2382,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2242,
+                2243,
+                2247
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "106839",
+            "square": 420.0
+        },
+        {
+            "position": {
+                "latitude": 55.855098185289236,
+                "longitude": 37.4857302451842
+            },
+            "organization": 2382,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2242,
+                2243
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "106840",
+            "square": 899.8
+        },
+        {
+            "position": {
+                "latitude": 55.613768,
+                "longitude": 37.538799
+            },
+            "organization": 2409,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2255
+            ],
+            "name": "Учреждение культурно-досугового типа «Вдохновение»",
+            "zone_id": "116372",
+            "square": 50.0
+        },
+        {
+            "position": {
+                "latitude": 55.81416990098269,
+                "longitude": 37.880916834745605
+            },
+            "organization": 2410,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2256
+            ],
+            "name": "Лыжная трасса и база (сезонная) «Лыжная трасса в Горенском лесопарке»",
+            "zone_id": "103641",
+            "square": 1000.0
+        },
+        {
+            "position": {
+                "latitude": 55.606901137646624,
+                "longitude": 37.735592323780864
+            },
+            "organization": 2376,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2242,
+                2261
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "101945",
+            "square": 103.0
+        },
+        {
+            "position": {
+                "latitude": 55.603441312864106,
+                "longitude": 37.745661918839666
+            },
+            "organization": 2376,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2242,
+                2261
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "102572",
+            "square": 239.0
+        },
+        {
+            "position": {
+                "latitude": 55.846086960813835,
+                "longitude": 37.49841985889853
+            },
+            "organization": 2381,
+            "accessibility": {
+                "distance": 1000,
+                "name": "Районное"
+            },
+            "sportTypes": [
+                2242,
+                2243,
+                2246,
+                2255,
+                2261,
+                2270,
+                2281,
+                2286,
+                2287,
+                2310
+            ],
+            "name": "Досуговый центр «Родник»",
+            "zone_id": "103433",
+            "square": 202.1
+        },
+        {
+            "position": {
+                "latitude": 55.77842961903471,
+                "longitude": 37.70512278536784
+            },
+            "organization": 2411,
+            "accessibility": {
+                "distance": 500,
+                "name": "Шаговая доступность"
+            },
+            "sportTypes": [
+                2241,
+                2242,
+                2243,
+                2261
+            ],
+            "name": "Дворовая территория",
+            "zone_id": "106362",
+            "square": 371.0
+        }
+    ]
+}
