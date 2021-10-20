@@ -6,10 +6,12 @@ import 'package:flutter_svg/parser.dart';
 import 'package:moscow_move_mobile/components/Text.dart';
 
 class MyCheckBox extends StatefulWidget {
-  MyCheckBox({ Key key, this.text, this.fontWeight }) : super(key: key);
+  MyCheckBox({ Key key, this.text, this.fontWeight, this.onChange, this.selected }) : super(key: key);
 
   String text;
   FontWeight fontWeight;
+  Function onChange;
+  bool selected;
 
   @override
   _MyCheckBoxState createState() => _MyCheckBoxState();
@@ -17,7 +19,6 @@ class MyCheckBox extends StatefulWidget {
 
 class _MyCheckBoxState extends State<MyCheckBox> with SingleTickerProviderStateMixin{
 
-  bool active = false;
 
   AnimationController controller;
   Animation<double> animation;
@@ -27,6 +28,10 @@ class _MyCheckBoxState extends State<MyCheckBox> with SingleTickerProviderStateM
     ..addListener(() {
       setState(() {});
      });
+
+    if (widget.selected) {
+      controller.animateTo(1);
+    }
   }
 
   @override
@@ -38,8 +43,10 @@ class _MyCheckBoxState extends State<MyCheckBox> with SingleTickerProviderStateM
           setState(() {
             if (controller.value == 1) {
               controller.animateBack(0);
+              widget.onChange(false);
             }
             else{
+              widget.onChange(true);
               controller.animateTo(1);
             }
           });

@@ -11,7 +11,6 @@ export const getMarkers = () => {
 
     
     JSON.parse(JSON.parse(localStorage.localstorage_app).dots).markers.forEach((dot:any) => {
-        console.log(dot)
         let cords = new Array()
         let color = getCircleColor(dot.area)
 

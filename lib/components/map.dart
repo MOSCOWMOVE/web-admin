@@ -6,6 +6,7 @@ import 'dart:js' as js;
 import 'dart:ui' as ui;
 import 'dart:convert';
 import 'package:localstorage/localstorage.dart';
+import 'package:moscow_move_mobile/PointOperations.dart';
 
 import '../fetch.dart';
 
@@ -28,26 +29,44 @@ class _MapState extends State<Map> {
         //if (value["next"] != null) {
         //  getPointPaginationData(value["next"]);
         //}
-          
-        points = (value["results"] as List<dynamic>).map((e)  {
-          return {
-          "id" : e["zone_id"],
-          "cords" : [e["position"]["longitude"], e["position"]["latitude"]],
-          "type" : e["accessibility"]["distance"],
-          "amount": 1,
-          "area" : e["square"]};
-        }).toList();
-        dots["markers"] = points;
-        storage.setItem("dots", jsonEncode(dots));
-        }
-      );
+          // ignore: unnecessary_cast
+          SetPoints((value["results"] as List<dynamic>).map((e) {
+            return Point(
+              id: e["zone_id"], 
+              cords: [e["position"]["longitude"], 
+              e["position"]["latitude"]], 
+              type: e["accessibility"]["distance"], 
+              area: e["square"]);
+          }).toList() as List<Point>);
+          /*points = (value["results"] as List<dynamic>).map((e)  {
+            return {
+            "id" : e["zone_id"],
+            "cords" : [e["position"]["longitude"], e["position"]["latitude"]],
+            "type" : e["accessibility"]["distance"],
+            "amount": 1,
+            "area" : e["square"]};
+          }).toList();
+          dots["markers"] = points;
+          storage.setItem("dots", jsonEncode(dots));*/
+        });
+        
   }
 
   void initState() {
     getPointPaginationData("api/sport_zones");
+    /*fetch_pagination("api/sport_zones").then((value) {
+      SetPoints((value as List<dynamic>).map((e) {
+            return Point(
+              id: e["zone_id"], 
+              cords: [e["position"]["longitude"], 
+              e["position"]["latitude"]], 
+              type: e["accessibility"]["distance"], 
+              area: e["square"]);
+          }).toList() as List<Point>);
+    });*/
   }
 
-  dynamic dots = { 
+  dynamic dots = {
     "markers" : []
     };
 
