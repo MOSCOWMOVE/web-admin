@@ -9,7 +9,6 @@ import {getMarkers} from "./parse"
 (mapboxgl as any).accessToken = 'pk.eyJ1IjoiZmlyZXNpZWh0IiwiYSI6ImNrdW9kemYzbTB4ZGkycHAxbXN2YnIzaGMifQ.G0fl-qVbecucfOvn8OtU4Q';
 
  let districs = getDistrits()
-localStorage.blackTheme = 'true'
  
 const map = new mapboxgl.Map({
     container: 'map', // container ID
@@ -26,7 +25,6 @@ let markers = dataMarkers.markers
 let markersCoverage = dataMarkers.markersCoverage
 let outlines = dataMarkers.outlines
 
-console.log(markersCoverage)
 
 map.on('load', () => {
     if (localStorage.getItem("blackTheme") != "true"){
@@ -39,7 +37,8 @@ map.on('load', () => {
     });
        
     
-    
+
+
     map.addLayer(
                 {
                     'id': 'markersCoverage',
@@ -55,20 +54,42 @@ map.on('load', () => {
             )
         
     }
-   
-    map.addLayer({
-        "id": "districts",
-        "type": "fill",
-        "source": {
-            "type": "geojson",
-            "data": districtData 
-        },
-        "minzoom" : 8,
-        'paint': {
-            'fill-color': ['get', 'color'],
-            'fill-opacity': 0.25
+    if (localStorage.getItem('showDistrics') == "true"){
+        if (localStorage.getItem("is3D") == 'true'){
+            map.addLayer({
+                "id": "districts3d",
+                "type": "fill-extrusion",
+                "source": {
+                    "type": "geojson",
+                    "data": districtData 
+                },
+                "minzoom" : 8,
+                'paint': {
+                    'fill-extrusion-color': ['get', 'color'],
+                    'fill-extrusion-opacity': 0.25,
+                    'fill-extrusion-height': ['get', 'height']
+                }    });
+       
+        } else{
+            map.addLayer({
+                "id": "districts",
+                "type": "fill",
+                "source": {
+                    "type": "geojson",
+                    "data": districtData 
+                },
+                "minzoom" : 8,
+                'paint': {
+                    'fill-color': ['get', 'color'],
+                    'fill-opacity': 0.25
+                }
+            });
         }
-    });
+    }
+    
+
+
+
 
     map.addLayer({
             "id": "outlines",

@@ -17,10 +17,10 @@ export const getDistrits = () => {
         
         areaData1.data.forEach((district:any) => {
             if (district.name == feature.properties.NAME){
+                feature.properties.height = 2000 * district.density/30387
                 feature.properties.color = getDisctrictColor(district.density)
             }
         });
-        
     });
     return districtData
 }
