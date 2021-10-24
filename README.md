@@ -21,7 +21,7 @@ document.addEventListener("message", (e) => {
 })
 ```
 чтобы отослать на карту список точек напишите:
-```
+```js
 document.getElementById("map_widget").contentWindow.postMessage(dots)
 
 
@@ -29,7 +29,7 @@ document.getElementById("map_widget").contentWindow.postMessage(dots)
 
 формат переменной dots:
 
-```
+```js
 {
     "id": String,
     "cords": Float[],
