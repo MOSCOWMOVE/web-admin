@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 Future<dynamic> fetch(String path, {bool is_absolute=false} ) async {
   var res = await http.get(
-      Uri.parse((is_absolute ? "" : "http://62.84.122.44:8000/") + path),
+      Uri.parse((is_absolute ? "" : "http://62.84.122.44:8001/") + path),
       headers: {
         'Accept': 'application/json; charset=unicode'
         });

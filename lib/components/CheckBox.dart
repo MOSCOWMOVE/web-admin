@@ -6,15 +6,20 @@ import 'package:flutter_svg/parser.dart';
 import 'package:moscow_move_mobile/components/Text.dart';
 
 class MyCheckBox extends StatefulWidget {
-  MyCheckBox({ Key key, this.text, this.fontWeight, this.onChange, this.selected }) : super(key: key);
+  MyCheckBox({ Key key, this.text, this.fontWeight, this.onChange, this.selected, this.length_dep }) : super(key: key);
 
   String text;
   FontWeight fontWeight;
   Function onChange;
   bool selected;
+  int length_dep;
 
   @override
-  _MyCheckBoxState createState() => _MyCheckBoxState();
+  // ignore: no_logic_in_create_state
+  _MyCheckBoxState createState()  {
+    length_dep ??= 25;
+    return _MyCheckBoxState();
+  }
 }
 
 class _MyCheckBoxState extends State<MyCheckBox> with SingleTickerProviderStateMixin{
@@ -75,7 +80,7 @@ class _MyCheckBoxState extends State<MyCheckBox> with SingleTickerProviderStateM
                 left: 11
               ),
               child: Mytext(
-                text: widget.text.length > 15 ? widget.text.substring(0, 12)+"..." : widget.text,
+                text: (widget.text.length > widget.length_dep ? widget.text.substring(0, widget.length_dep-3)+"..." : widget.text),
                 fontWeight: widget.fontWeight,
                 fontSize: 14,
               )

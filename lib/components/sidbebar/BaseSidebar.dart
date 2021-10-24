@@ -23,17 +23,10 @@ class BaseSidebar extends StatelessWidget {
       },
       child: Container(
         height: height,
-        width: 277,
-        decoration: BoxDecoration(
+        width: 320,
+        decoration: const BoxDecoration(
           color: Colors.white,
-          borderRadius: !this.isRight ? const BorderRadius.only(
-            topLeft: Radius.circular(20),
-            bottomLeft: Radius.circular(20)
-          ) : const BorderRadius.only(
-            topRight: Radius.circular(20),
-            bottomRight: Radius.circular(20)
-          ),
-          boxShadow: const [
+          boxShadow: [
               BoxShadow(
               color: Color.fromRGBO(0,0,0,0.12),
               blurRadius: 20,
@@ -42,7 +35,7 @@ class BaseSidebar extends StatelessWidget {
           ]
         ),
         child: Padding(
-          padding: const EdgeInsets.only(top: 47, left: 47, right: 30),
+          padding: const EdgeInsets.only(top: 16, left: 16, right: 32),
           child: OverflowBox(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

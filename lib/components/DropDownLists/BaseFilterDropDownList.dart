@@ -5,6 +5,7 @@ import 'package:moscow_move_mobile/components/CheckBox.dart';
 import 'package:moscow_move_mobile/components/Input.dart';
 import 'package:moscow_move_mobile/components/ScrollWidget.dart';
 import 'package:moscow_move_mobile/components/Text.dart';
+import 'package:moscow_move_mobile/components/sidbebar/leftSidebar.dart';
 
 import 'DropDownList.dart';
 
@@ -22,37 +23,63 @@ class BaseFilterDropDownList extends StatefulWidget {
 class _BaseFilterDropDownListState extends State<BaseFilterDropDownList> {
 
   List<String> selected = [];
+  bool all_selected = false;
+
+  String filter = "";
 
   @override
   Widget build(BuildContext context) {
+
+    List<String> filtered = widget.checkboxes;
+    if (filter.isNotEmpty) {
+      filtered = filtered.where((e) => e.contains(filter)).toList();
+    }
+
     return DropDownList(
       content: [
         Container(
           margin: EdgeInsets.only(top: 15),
-          child: Input()
+          child: Input(onChange: (String e) {
+            setState(() {
+              filter = e;
+            });
+          },)
         ),
         Container(
           margin: EdgeInsets.only(top:18),
           child: ScrollWidget(
             // ignore: unnecessary_cast
             child: ListView.builder(
-              itemCount: widget.checkboxes.length + 1,
+              
+              itemCount: filtered.length + 1,
               itemBuilder: (context, index) {
                 if (index == 0) {
-                  return MyCheckBox(text: "Выделить все", fontWeight: FontWeight.w700, selected: false,);
+                  return MyCheckBox(length_dep: 20, text: "Выделить все", fontWeight: FontWeight.w700, selected: all_selected, onChange: (sel) {
+                    if (sel) {
+                      setState(() {
+                        selected = widget.checkboxes;
+                      });
+                      
+                      widget.onChange(["__all__"]);
+                    }
+                    all_selected = sel;
+                  },);
                 }
                 index = index -1;
                 return Container(
+                  key: UniqueKey(),
                   margin: EdgeInsets.only(top: 18),
-                  child: MyCheckBox(text: widget.checkboxes[index], 
+                  child: MyCheckBox(
+                    text: filtered[index], 
+                    length_dep: 20,
                     fontWeight: FontWeight.w600, 
-                    selected: selected.contains(widget.checkboxes[index]),
+                    selected: this.selected.contains(filtered[index]),
                     onChange: (bool isSelected) {
                       if (isSelected) {
-                        selected.add(widget.checkboxes[index]);
+                        selected.add(filtered[index]);
                         widget.onChange(selected);
                       } else {
-                        selected.remove(widget.checkboxes[index]);
+                        selected.remove(filtered[index]);
                         widget.onChange(selected);
                       }
                     },
@@ -71,21 +98,3 @@ class _BaseFilterDropDownListState extends State<BaseFilterDropDownList> {
 }
 
 
-/*
-([
-              Container(),
-              MyCheckBox(text: "Выделить все", fontWeight: FontWeight.w700, selected: false,),
-            ] as List<Widget>) + widget.checkboxes.map((e) =>
-                Container(
-                  child: MyCheckBox(text: e, fontWeight: FontWeight.w600, onChange: (bool isSelected) {
-                    if (isSelected) {
-                      selected.add(e);
-                      widget.onChange(selected);
-                    } else {
-                      selected.remove(e);
-                      widget.onChange(selected);
-                    }
-                  }, selected: selected.contains(e),),
-                  margin: const EdgeInsets.only(top:18),
-                )
-            ).toList()*/

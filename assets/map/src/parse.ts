@@ -9,7 +9,6 @@ export const getMarkers = (inputs: IArea[]) => {
     let markersCoverage = new Array()
     let outlines = new Array()
 
-    console.log(inputs)
     
     inputs.forEach((dot) => {
         let cords = new Array()
@@ -31,13 +30,13 @@ export const getMarkers = (inputs: IArea[]) => {
         }
         markers.push(
             {
-                            'type': 'Feature',
-                            "id":dot.id,
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': dot.cords
-                            },
-                        },
+                'type': 'Feature',
+                "id":dot.id,
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': dot.cords
+                },
+            },
         )
         markersCoverage.push(
             {

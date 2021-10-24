@@ -34,7 +34,12 @@ class _RightSidebarState extends State<RightSidebar> {
   List<String> depOrgsFilter = [];
   List<String> openedTypeFilter = [];
 
+  bool isLoading = false;
+
   void setFilteredPoints() {
+    setState(() {
+      isLoading = true;
+    });
     String types_sort_template = "";
     if (sportTypesFilter.isNotEmpty) {
       types_sort_template = "types="+sportTypesFilter.join(",");
@@ -60,6 +65,9 @@ class _RightSidebarState extends State<RightSidebar> {
     (opened_type_template.isNotEmpty ? "&" : "")+
     opened_type_template
     ).then((value) {
+      setState(() {
+        isLoading = false;
+      });
       SetPoints(
         (value as List<dynamic>).map((e) {
           return Point(
@@ -97,99 +105,104 @@ class _RightSidebarState extends State<RightSidebar> {
     var height = MediaQuery.of(context).size.height;
     return BaseSidebar(
       children: [
-        SvgPicture.asset("assets/logo.svg"),
-        Container(
-          child: Mytext(
-            text: "Главная",
-            fontWeight: FontWeight.w800,
-            fontSize: 20,
-          ),
-          margin: const EdgeInsets.only(top: 35)
-        ),
-        SizedBox(
-          height: height - 175 - 10,
-          child: ScrollConfiguration(
-            behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-            child: ListView(
-              shrinkWrap: true,
-              physics: ClampingScrollPhysics(),
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(right: 20),
-                  child: Column(
+        Container(height: 20,),
+        Padding(
+          padding: EdgeInsets.only(left: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SvgPicture.asset("assets/logo.svg"),
+              
+              isLoading ? Container(
+                margin: EdgeInsets.only(top: 24),
+                child: const LinearProgressIndicator(
+                  minHeight: 12,
+                  valueColor: AlwaysStoppedAnimation(Color(0xff1AFC9D)),
+                  backgroundColor: Colors.white
+                ) 
+              ) : Container(),
+              Container(
+                child: Mytext(
+                  text: "Главная",
+                  fontWeight: FontWeight.w800,
+                  fontSize: 20,
+                ),
+                margin: const EdgeInsets.only(top: 35)
+              ),
+              SizedBox(
+                height: height - 175 - 10,
+                child: ScrollConfiguration(
+                  behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+                  child: ListView(
+                    shrinkWrap: true,
+                    physics: ClampingScrollPhysics(),
                     children: [
-                      Container(
-                        child: BaseFilterDropDownList(
-                          checkboxes: sportTypes,
-                          name: "Виды спорта",
-                          onChange: (List<String> selected) {
-                            sportTypesFilter = selected;
-                            setFilteredPoints();
-                          },
+                      Padding(
+                        padding: EdgeInsets.only(right: 20),
+                        child: Column(
+                          children: [
+                            Container(
+                              child: BaseFilterDropDownList(
+                                checkboxes: sportTypes,
+                                name: "Виды спорта",
+                                onChange: (List<String> selected) {
+                                  sportTypesFilter = selected;
+                                  setFilteredPoints();
+                                },
+                              ),
+                              margin: const EdgeInsets.only(
+                                top: 30
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(
+                                top: 30
+                              ),
+                              child: BaseFilterDropDownList(
+                                checkboxes: dep_orgs,
+                                name: "Ведомства",
+                                onChange: (List<String> selected) {
+                                  depOrgsFilter = selected;
+                                  setFilteredPoints();
+                                },
+                              )
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(
+                                top: 30
+                              ),
+                              child: BaseFilterDropDownList(
+                                checkboxes: ["Открытое", "Крытое", "Бассейн"],
+                                name: "Тип зоны",
+                                onChange: (List<String> selected) {
+                                  openedTypeFilter = selected;
+                                  setFilteredPoints();
+                                },
+                              )
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(
+                                top: 30
+                              ),
+                              child: BaseFilterDropDownList(
+                                checkboxes: ["500", "1000", "3000", "5000"],
+                                name: "Доступность",
+                                onChange: (List<String> selected) {
+                                  accessibilityFilter = selected;
+                                  setFilteredPoints();
+                                },
+                              )
+                            ),
+                          ]
                         ),
-                        margin: const EdgeInsets.only(
-                          top: 30
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(
-                          top: 30
-                        ),
-                        child: BaseFilterDropDownList(
-                          checkboxes: moscowDistricts,
-                          name: "Районы",
-                          onChange: (List<String> selected) {
-                            
-                          },
-                        )
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(
-                          top: 30
-                        ),
-                        child: BaseFilterDropDownList(
-                          checkboxes: dep_orgs,
-                          name: "Ведомства",
-                          onChange: (List<String> selected) {
-                            depOrgsFilter = selected;
-                            setFilteredPoints();
-                          },
-                        )
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(
-                          top: 30
-                        ),
-                        child: BaseFilterDropDownList(
-                          checkboxes: ["Открытое", "Крытое", "Бассейн"],
-                          name: "Тип зоны",
-                          onChange: (List<String> selected) {
-                            openedTypeFilter = selected;
-                            setFilteredPoints();
-                          },
-                        )
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(
-                          top: 30
-                        ),
-                        child: BaseFilterDropDownList(
-                          checkboxes: ["500", "1000", "3000", "5000"],
-                          name: "Доступность",
-                          onChange: (List<String> selected) {
-                            accessibilityFilter = selected;
-                            setFilteredPoints();
-                          },
-                        )
-                      ),
-                    ]
-                  ),
-                )
-              ],
-            )
-          ) 
+                      )
+                    ],
+                  )
+                ) 
+              ),
+            ],
+          )
         ),
-
       ],
       isRight: true,
     );

@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'dart:convert';
+import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:mapbox_gl/mapbox_gl.dart';
 import 'dart:html' as html;
@@ -26,9 +28,7 @@ class _MapState extends State<Map> {
   Future<dynamic> getPointPaginationData(String url) {
     fetch(url).then(
       (value)  {
-        //if (value["next"] != null) {
-        //  getPointPaginationData(value["next"]);
-        //}
+
           // ignore: unnecessary_cast
           SetPoints((value["results"] as List<dynamic>).map((e) {
             return Point(
@@ -38,32 +38,12 @@ class _MapState extends State<Map> {
               type: e["accessibility"]["distance"], 
               area: e["square"]);
           }).toList() as List<Point>);
-          /*points = (value["results"] as List<dynamic>).map((e)  {
-            return {
-            "id" : e["zone_id"],
-            "cords" : [e["position"]["longitude"], e["position"]["latitude"]],
-            "type" : e["accessibility"]["distance"],
-            "amount": 1,
-            "area" : e["square"]};
-          }).toList();
-          dots["markers"] = points;
-          storage.setItem("dots", jsonEncode(dots));*/
         });
         
   }
 
   void initState() {
     getPointPaginationData("api/sport_zones");
-    /*fetch_pagination("api/sport_zones").then((value) {
-      SetPoints((value as List<dynamic>).map((e) {
-            return Point(
-              id: e["zone_id"], 
-              cords: [e["position"]["longitude"], 
-              e["position"]["latitude"]], 
-              type: e["accessibility"]["distance"], 
-              area: e["square"]);
-          }).toList() as List<Point>);
-    });*/
   }
 
   dynamic dots = {
@@ -72,7 +52,6 @@ class _MapState extends State<Map> {
 
   @override
   Widget build(BuildContext context) {
-    
 
     storage.setItem('dots', jsonEncode(dots));
     double width = MediaQuery.of(context).size.width;
@@ -81,14 +60,15 @@ class _MapState extends State<Map> {
     ui.platformViewRegistry.registerViewFactory(
         'map',
             (int id) => html.IFrameElement()
-          ..width = (width - 270 * 2).toString()+"px"
+          ..width = (width - 310 * 2).toString()+"px"
           ..height = height.toString()+"px"
-          ..src = 'lib/components/assets/dist/index.html'
+          ..src = 'https://parallel-gold.surge.sh/'
           ..style.border = 'none'
           ..style.height = "100vh"
-          ..style.width = (width - 260 * 2).toString()+"px"
+          ..style.width = (width - 310 * 2).toString()+"px"
           ..style.position = "fixed"
-          ..style.left = "260px",
+          ..style.left = "310px"
+          ..id = "map_widget"
           );
     return const Scaffold(
         body: HtmlElementView(viewType: "map",)

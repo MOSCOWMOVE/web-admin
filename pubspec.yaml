@@ -35,6 +35,7 @@ dependencies:
   google_fonts: ^2.1.0
   http: ^0.13.4
   flutter_redux: ^0.8.2
+  csv: ^5.0.0
 
 
 dev_dependencies:
@@ -50,6 +51,8 @@ flutter:
     - assets/logo.svg
     - assets/arrow.svg
     - assets/check.svg
+    - assets/spoiler_icon.svg
+    - assets/map/dist/
   
   fonts:
     - family: Averta CY
@@ -60,6 +63,8 @@ flutter:
           weight: 600
         - asset: assets/fonts/averta/AvertaCyrillicExtraBold.otf
           weight: 800
+        - asset: assets/fonts/averta/AvertaCyrillicRegular.otf
+          weight: 400
     - family: Roboto
       fonts:
         - asset: assets/fonts/roboto/Roboto-Regular.ttf

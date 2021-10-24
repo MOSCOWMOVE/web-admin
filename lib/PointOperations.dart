@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'dart:convert';
+import 'dart:html';
 
 import 'package:localstorage/localstorage.dart';
 
@@ -28,8 +29,9 @@ void SetPoints(List<Point> points) {
   dynamic dots = { 
     "markers" : []
   };
-
   dots["markers"] = jsonPoints;
-  print(dots);
+  var iframe = (window.document.getElementById("map_widget") as IFrameElement).contentWindow;
+  iframe.postMessage(dots, "*");
+
   storage.setItem("dots", jsonEncode(dots));
 } 

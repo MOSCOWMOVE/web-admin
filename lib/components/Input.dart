@@ -5,7 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 class Input extends StatelessWidget {
-  const Input({ Key key }) : super(key: key);
+  Input({ Key key, this.onChange }) : super(key: key);
+
+  Function onChange;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +22,9 @@ class Input extends StatelessWidget {
     return SizedBox(
       height: 32,
       child: TextField(
+        onChanged: (e) {
+          this.onChange(e);
+        },
         cursorColor: Color(0xffABABDB),
         style: TextStyle(
           color: Color(0xffABABDB)
